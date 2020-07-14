@@ -1,0 +1,7 @@
+html,
+body {
+  margin: 0;
+  font-family: futura, Nunito;
+  overflow: hidden;
+  overflow-y: auto;
+}
