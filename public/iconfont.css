@@ -1,0 +1,29 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1594718951521'); /* IE9 */
+  src: url('iconfont.eot?t=1594718951521#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAREAAsAAAAACIwAAAP4AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqEPINdATYCJAMQCwoABCAFhG0HUxtaB8gOJUHBwABgoFBAPHw/9u3c9+7/+9a0qcWdrQbTSUw3aYTyK2ZJQ6MxRCidpBba/v/fmTdYwFNpRQdvkonP7BTOyqyATzjtOf3i/1xO7656XkDzW5bjGJvHGBT1AowmUEBjL5CyuIAS5IaxC1ricgID5uxEOxkanQyqktkuENcIHgtUMyrZQAxN2q0YmuI+KGnlBv02gHvB9+MXOIYqRacyu566EMIF/6/R75UZvf9y2R4C7OkMYKOo2AGSuFRpOoMROXcwDKi/YdoDmqbwNfpd9nvl//8h5yiiZv3lUYRKdJnhQ2AXCeuFsR0Gha/ZDIJvyioV4rJ1Qx9eA/gACFO3TKFMqzHHg3YYHlSnvXwaevnxOlCvgwafPgt78iSZrHr47FH1A/n9nJLXuK67ctpUufOMi974OQuVrrObDz5+nPzkSUpruzHt8V3ztjnjtq4toyeMZp9s6e42efo09Zlf25BN4ZWYa9Uh965B74Dh5CK037N1FqDXavLsWdrTpwe1V+5bgnxSQ+PWpHzCUL1qIkGfoOrPBHKjzhsaOm8e2TD6HibnH6/yZLd1TY8bsVqrTTjto5MdrnKT9m+Wpglk4/oIvZ8dH5uC6N/CbfNltDA5nVtsvWkDhEeUXpTu5p3VPTqKj/KhQ0ek0wH8/xPB+0woAKs7VpgKRa7Qqnteluz68UYlPlbjeLBn+fOny4WN1plvIsBr+Ut5BJNKoe+hhfSEC38zytdixb7X9jB+C8ND+Bvpe6iUSOYJZes9ard/FNv2vKBVM1cUCi7l/oDim84p3WDdNseEBSs8km6UIjFAJ1lXze2Tr019lfM630zqbb6rxqq6tpM7wy9c9/UT5hNw9esXwneCPcDxhzrN2AFAfUe//8ubebXLpzxPx/uXqsYj57136n4fpBzLE2oP4L+xO7N/MLtjRmpcU52p8ByWbk4nUn4KBiwtv9XLhLdTSKY7hxOa6QSKPrNQNStoEnagY9AudDX7MGBb2OhBk0gMkf3YUgogjJmHYsRbqMbcQZPwBjpmfIWusWDAgNNhMOWgtSDUg0jEohAXY+/HCI5UgttaSj2MTES83SIWmeYG5FREFhAWzMHWPu8JQxJETtGjYA/PkaJwDCelYiwUrIZEIikmI6UCxKFs+RQl87Szw6seZMuRikHdCSSEhYJwYdj2wxA4pCRwLzdFvfD5RAjPbiIsZENalTkVQipAVI5xYMu+AxomknRKu5VTCuzB44hCwWFwJCkxTCgwICLLKYWRVTcSQDgotvgD7DKe7FA2vKvIdnmJ+A2XwQCze0aJGhkd7RohESKuW12ZR1D83WwjJGYRIqcvKUQUIeHl4YRIhLgA') format('woff2'),
+  url('iconfont.woff?t=1594718951521') format('woff'),
+  url('iconfont.ttf?t=1594718951521') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1594718951521#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-linkedin:before {
+  content: "\e65c";
+}
+
+.icon-github:before {
+  content: "\e64c";
+}
+
+.icon-emailmarketing_filled:before {
+  content: "\e706";
+}
+
