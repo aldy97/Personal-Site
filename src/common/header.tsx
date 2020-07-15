@@ -3,23 +3,38 @@ import styled from 'styled-components';
 import theme from '../theme/theme';
 
 const StyledHeader = styled.div`
-  height: calc(100vh);
+  height: ${theme.$headerHeight};
+  line-height: ${theme.$headerHeight};
   font-size: ${theme.$headerFontSize};
+  padding-left: ${theme.$headerPadding};
+  padding-right: ${theme.$headerPadding};
+  color: ${theme.$themeColor};
+  span {
+    cursor: pointer;
   }
-  img {
-    height: calc(100vh);
-    width: calc(100vw);
-    object-fit: cover;
+  .right {
+    float: right;
+    cursor: auto;
+    span {
+      margin-left: 35px;
+      margin-right: 35px;
+    }
   }
 `;
 
-function Header() {
+const Header: React.FC = () => {
   return (
     <StyledHeader>
-      <img alt='' src={require('../static/M.jpeg')}></img>
-      <div>lolpllsdflsdjf</div>
+      <span className='left'>
+        <strong>Feng (Aldy) Xiong</strong>
+      </span>
+      <span className='right'>
+        <span>Blog</span>
+        <span>Projects</span>
+        <span style={{ marginRight: 0 }}>Resume</span>
+      </span>
     </StyledHeader>
   );
-}
+};
 
 export default Header;

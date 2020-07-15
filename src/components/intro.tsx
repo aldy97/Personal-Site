@@ -14,7 +14,7 @@ const StyledIntro = styled.div`
   }
 `;
 
-function Intro() {
+const Intro: React.FC = () => {
   return (
     <StyledIntro>
       <div>My Name is Feng Xiong</div>
@@ -27,6 +27,6 @@ function Intro() {
       </div>
     </StyledIntro>
   );
-}
+};
 
 export default Intro;

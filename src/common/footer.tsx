@@ -16,7 +16,7 @@ const StyledFooter = styled.div`
   }
 `;
 
-function Footer() {
+const Footer: React.FC = () => {
   return (
     <StyledFooter>
       <i className='iconfont icon-github'></i>
@@ -24,6 +24,6 @@ function Footer() {
       <i className='iconfont icon-emailmarketing_filled'></i>
     </StyledFooter>
   );
-}
+};
 
 export default Footer;
