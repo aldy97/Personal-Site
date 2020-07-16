@@ -1,14 +1,14 @@
 import React from 'react';
 import Header from './common/header';
 import Footer from './common/footer';
-import Intro from './components/intro';
+import Home from './pages/home';
 
 function App() {
   return (
     <div>
-      <Header></Header>
-      <Intro></Intro>
-      <Footer></Footer>
+      <Header />
+      <Home />
+      <Footer />
     </div>
   );
 }

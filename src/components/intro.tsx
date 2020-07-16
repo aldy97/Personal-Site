@@ -4,27 +4,24 @@ import theme from '../theme/theme';
 
 const StyledIntro = styled.div`
   margin-top: ${theme.$marginSection};
-  text-align: center;
+  margin-left: ${theme.$headerPadding};
+  margin-bottom: ${theme.$marginSection};
   font-size: ${theme.$introFontSize};
-  i {
+  font-weight: 700;
+  div {
+    margin-bottom: 6px;
+  }
+  .pos {
     color: ${theme.$themeColor};
-    font-size: ${theme.$iconSize};
-    margin-right: 20px;
-    cursor: pointer;
   }
 `;
 
 const Intro: React.FC = () => {
   return (
     <StyledIntro>
-      <div>My Name is Feng Xiong</div>
-      <div>I am a front-end developer</div>
-      <div>And a back-end beginner</div>
-      <div>
-        <i className='iconfont icon-github'></i>
-        <i className='iconfont icon-linkedin'></i>
-        <i className='iconfont icon-emailmarketing_filled'></i>
-      </div>
+      <div>I am Feng Xiong</div>
+      <div className='pos'>Front-end developer</div>
+      <div className='pos'>Sports enthusiastic</div>
     </StyledIntro>
   );
 };

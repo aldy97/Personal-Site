@@ -19,6 +19,9 @@ const StyledHeader = styled.div`
       margin-left: 35px;
       margin-right: 35px;
     }
+    a {
+      color: ${theme.$themeColor};
+    }
   }
 `;
 
@@ -31,7 +34,12 @@ const Header: React.FC = () => {
       <span className='right'>
         <span>Blog</span>
         <span>Projects</span>
-        <span style={{ marginRight: 0 }}>Resume</span>
+        <a
+          style={{ marginRight: 0 }}
+          href='https://drive.google.com/file/d/1JFUcNs16bV5_SvarKwQJ83JEw6JRjYC_/view'
+        >
+          Resume
+        </a>
       </span>
     </StyledHeader>
   );
