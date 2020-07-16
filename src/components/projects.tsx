@@ -2,12 +2,10 @@ import React from 'react';
 import projectsList, { Project, tag } from './projectsList';
 import styled from 'styled-components';
 import theme from '../theme/theme';
-import { Card } from 'antd';
-import { Tag } from 'antd';
-import { Progress } from 'antd';
+import { Card, Tag, Progress } from 'antd';
 import 'antd/dist/antd.css';
 
-const StyledProjects = styled.div`
+export const StyledProjects = styled.div`
   .title {
     color: ${theme.$themeColor};
     font-size: ${theme.$titleSize};
@@ -15,7 +13,7 @@ const StyledProjects = styled.div`
   }
 `;
 
-const StyledCard = styled(Card)`
+export const StyledCard = styled(Card)`
   margin-top: ${theme.$marginSection};
   margin-bottom: ${theme.$marginSection};
   margin-left: auto;
