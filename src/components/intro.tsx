@@ -14,6 +14,13 @@ const StyledIntro = styled.div`
   .pos {
     color: ${theme.$themeColor};
   }
+  .iconWrapper {
+    a {
+      font-size: ${theme.$iconSize};
+      margin-right: 10px;
+      color: ${theme.$jsYellow};
+    }
+  }
 `;
 
 const Intro: React.FC = () => {
@@ -22,6 +29,14 @@ const Intro: React.FC = () => {
       <div>I am Feng Xiong</div>
       <div className='pos'>Front-end developer</div>
       <div className='pos'>Sports enthusiastic</div>
+      <div className='iconWrapper'>
+        <a
+          className='iconfont icon-github'
+          href='https://github.com/aldy97'
+        ></a>
+        <a className='iconfont icon-linkedin' href=''></a>
+        <a className='iconfont icon-emailmarketing_filled' href=''></a>
+      </div>
     </StyledIntro>
   );
 };

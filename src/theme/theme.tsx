@@ -13,7 +13,7 @@ const theme = {
   $reactBlue: '#1e8feb',
   $nodeGreen: '#68A063',
   $expressGreen: '#3C873A',
-  $themeColor: '#03a2ec',
+  $themeColor: 'rgb(0, 122, 204)',
 };
 
 export default theme;

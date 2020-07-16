@@ -20,6 +20,7 @@ const StyledHeader = styled.div`
       margin-right: 35px;
     }
     a {
+      margin-left: 35px;
       color: ${theme.$themeColor};
     }
   }

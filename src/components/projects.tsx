@@ -59,7 +59,6 @@ const Projects: React.FC = () => {
         </p>
         <p>
           <Tag color={theme.$reactBlue}>React.js</Tag>
-          <Tag color={theme.$reactBlue}>Redux</Tag>
           <Tag color={theme.$tsBlue}>TypeScript</Tag>
           <Tag color={theme.$nodeGreen}>Node.js</Tag>
           <Tag color={theme.$expressGreen}>Express</Tag>
