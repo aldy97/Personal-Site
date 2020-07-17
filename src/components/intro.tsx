@@ -3,9 +3,11 @@ import styled from 'styled-components';
 import theme from '../theme/theme';
 
 const StyledIntro = styled.div`
+  width: ${theme.$headerWidth};
   margin-top: ${theme.$marginSection};
-  margin-left: ${theme.$headerPadding};
   margin-bottom: ${theme.$marginSection};
+  margin-left: auto;
+  margin-right: auto;
   font-size: ${theme.$introFontSize};
   font-weight: 700;
   div {
@@ -21,6 +23,13 @@ const StyledIntro = styled.div`
       color: ${theme.$jsYellow};
     }
   }
+  @media (max-width: 500px) {
+    width: 300px;
+    font-size: 28px;
+    div {
+      text-align: center;
+    }
+  }
 `;
 
 const Intro: React.FC = () => {
@@ -28,7 +37,7 @@ const Intro: React.FC = () => {
     <StyledIntro>
       <div>I am Feng Xiong</div>
       <div className='pos'>Front-end developer</div>
-      <div className='pos'>Sports enthusiastic</div>
+      <div className='pos'>UI design enthusiastic</div>
       <div className='iconWrapper'>
         <a
           className='iconfont icon-github'

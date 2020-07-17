@@ -4,10 +4,11 @@ import theme from '../theme/theme';
 
 const StyledHeader = styled.div`
   height: ${theme.$headerHeight};
+  width: ${theme.$headerWidth};
+  margin-left: auto;
+  margin-right: auto;
   line-height: ${theme.$headerHeight};
   font-size: ${theme.$headerFontSize};
-  padding-left: ${theme.$headerPadding};
-  padding-right: ${theme.$headerPadding};
   color: ${theme.$themeColor};
   span {
     cursor: pointer;
@@ -22,6 +23,28 @@ const StyledHeader = styled.div`
     a {
       margin-left: 35px;
       color: ${theme.$themeColor};
+    }
+  }
+  @media (max-width: 500px) {
+    width: 300px;
+    .left {
+      display: block;
+      text-align: center;
+    }
+    .right {
+      width: 300px;
+      display: flex;
+      span {
+        flex: 1;
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+      }
+      a {
+        flex: 1;
+        margin-left: 0;
+        text-align: center;
+      }
     }
   }
 `;

@@ -14,7 +14,12 @@ const StyledCard = styled(Card)`
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
+  width: 800px;
+  @media (max-width: 500px) {
+    width: 300px;
+  }
 `;
+
 const StyledTag = styled(Tag)`
   margin-top: 12px;
 `;
@@ -29,13 +34,8 @@ const Blog: React.FC = () => {
         return (
           <StyledCard
             key={index}
-            style={{ width: 600 }}
-            cover={
-              <img
-                alt=''
-                src='https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
-              />
-            }
+            cover={<img alt='' src={blog.pic} />}
+            hoverable={true}
           >
             <Meta title={blog.title} description={blog.desc} />
             {blog.tags.map((tag: tag, index: number) => {

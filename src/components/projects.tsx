@@ -18,6 +18,11 @@ export const StyledCard = styled(Card)`
   margin-bottom: ${theme.$marginSection};
   margin-left: auto;
   margin-right: auto;
+  cursor: pointer;
+  width: 600px;
+  @media (max-width: 500px) {
+    width: 300px;
+  }
 `;
 
 const Projects: React.FC = () => {
@@ -29,7 +34,6 @@ const Projects: React.FC = () => {
           <StyledCard
             title={item.title}
             extra={<a href={item.link}>More</a>}
-            style={{ width: 600 }}
             key={index}
           >
             <p>{item.intro}</p>
