@@ -16,7 +16,7 @@ const StyledCard = styled(Card)`
   cursor: pointer;
   width: 800px;
   @media (max-width: 500px) {
-    width: 300px;
+    width: 350px;
   }
 `;
 

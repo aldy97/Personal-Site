@@ -34,7 +34,7 @@ const blogList: blog[] = [
     title: '5 Ways to Center Align in CSS',
     desc: 'CSS is honestly tedious',
     link: 'https://cgao.info/5-ways-to-center-align-in-css',
-    pic: require('../static/alignDIv.webp'),
+    pic: require('../static/CSS.jpg'),
     tags: [{ color: theme.$tsBlue, name: 'CSS' }],
   },
 ];

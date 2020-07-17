@@ -21,7 +21,7 @@ export const StyledCard = styled(Card)`
   cursor: pointer;
   width: 600px;
   @media (max-width: 500px) {
-    width: 300px;
+    width: 350px;
   }
 `;
 
