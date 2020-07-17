@@ -18,7 +18,6 @@ export const StyledCard = styled(Card)`
   margin-bottom: ${theme.$marginSection};
   margin-left: auto;
   margin-right: auto;
-  cursor: pointer;
   width: 600px;
   @media (max-width: 500px) {
     width: 350px;

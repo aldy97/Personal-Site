@@ -8,20 +8,29 @@ const StyledFooter = styled.div`
   line-height: ${theme.$headerHeight};
   text-align: center;
   border-top: 1px solid ${theme.$themeColor};
-  i {
+  a {
     color: ${theme.$themeColor};
     font-size: ${theme.$iconSize};
     margin-right: 20px;
     cursor: pointer;
+  }
+  @media (max-width: 500px) {
+    width: 100%;
+    display: flex;
+    a {
+      flex: 1;
+      text-align: center;
+      margin-right: 0;
+    }
   }
 `;
 
 const Footer: React.FC = () => {
   return (
     <StyledFooter>
-      <i className='iconfont icon-github'></i>
-      <i className='iconfont icon-linkedin'></i>
-      <i className='iconfont icon-emailmarketing_filled'></i>
+      <a className='iconfont icon-github' href='https://github.com/aldy97'></a>
+      <a className='iconfont icon-linkedin'></a>
+      <a className='iconfont icon-emailmarketing_filled'></a>
     </StyledFooter>
   );
 };

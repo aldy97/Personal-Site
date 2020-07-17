@@ -27,6 +27,7 @@ const StyledHeader = styled.div`
   }
   @media (max-width: 500px) {
     width: 300px;
+    line-height: 40px;
     .left {
       display: block;
       text-align: center;
