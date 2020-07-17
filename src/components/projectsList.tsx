@@ -25,7 +25,6 @@ const projectsList: Project[] = [
       { color: theme.$reactBlue, name: 'React' },
       { color: theme.$reactBlue, name: 'Redux' },
       { color: theme.$jsYellow, name: 'JavaScript' },
-      { color: 'pink', name: 'styled-components💅🏾' },
     ],
   },
   {
@@ -39,7 +38,6 @@ const projectsList: Project[] = [
       { color: theme.$tsBlue, name: 'TypeScript' },
       { color: theme.$nodeGreen, name: 'Node' },
       { color: theme.$expressGreen, name: 'Express' },
-      { color: 'pink', name: 'styled-components💅🏾' },
     ],
   },
   {
@@ -54,7 +52,6 @@ const projectsList: Project[] = [
       { color: theme.$reactBlue, name: 'Redux' },
       { color: theme.$jsYellow, name: 'JavaScript' },
       { color: theme.$tsBlue, name: 'TypeScript' },
-      { color: 'pink', name: 'styled-components💅🏾' },
     ],
   },
 ];
