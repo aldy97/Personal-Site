@@ -7,6 +7,7 @@ export interface blog {
   link: string;
   pic: any;
   tags: tag[];
+  href: string;
 }
 
 const blogList: blog[] = [
@@ -19,6 +20,7 @@ const blogList: blog[] = [
       { color: theme.$jsYellow, name: 'JavaScript' },
       { color: theme.$tsBlue, name: 'TypeScript' },
     ],
+    href: '/blog/TSvsJS',
   },
   {
     title: 'Hooks Overview',
@@ -29,6 +31,7 @@ const blogList: blog[] = [
       { color: theme.$jsYellow, name: 'JavaScript' },
       { color: theme.$reactBlue, name: 'React' },
     ],
+    href: '/blog/Hooks',
   },
   {
     title: '5 Ways to Center Align in CSS',
@@ -36,6 +39,7 @@ const blogList: blog[] = [
     link: 'https://cgao.info/5-ways-to-center-align-in-css',
     pic: require('../static/CSS.jpg'),
     tags: [{ color: theme.$tsBlue, name: 'CSS' }],
+    href: '/blog/CSS',
   },
 ];
 

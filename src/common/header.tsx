@@ -53,7 +53,12 @@ const StyledHeader = styled.div`
 const Header: React.FC = () => {
   return (
     <StyledHeader>
-      <span className='left'>
+      <span
+        className='left'
+        onClick={() => {
+          window.location.href = '/';
+        }}
+      >
         <strong>Feng (Aldy) Xiong</strong>
       </span>
       <span className='right'>

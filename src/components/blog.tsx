@@ -50,6 +50,9 @@ const Blog: React.FC = () => {
               key={index}
               cover={<img alt='' src={blog.pic} />}
               hoverable={true}
+              onClick={() => {
+                window.location.href = blog.href;
+              }}
             >
               <Meta title={blog.title} description={blog.desc} />
               {blog.tags.map((tag: tag, index: number) => {

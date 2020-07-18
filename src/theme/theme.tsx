@@ -1,4 +1,8 @@
-const theme = {
+type themeProps = {
+  [key: string]: string;
+};
+
+const theme: themeProps = {
   $headerHeight: '60px',
   $headerWidth: '1200px',
   $headerFontSize: '18px',
@@ -6,6 +10,7 @@ const theme = {
   $introFontSize: '36px',
   $titleSize: '48px',
   $marginSection: '40px',
+  $blogWidth: '765px',
   //colors
   $footerBorderColor: 'rgb(3, 37, 108)',
   $tsBlue: 'rgb(0, 122, 204)',
