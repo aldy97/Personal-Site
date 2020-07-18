@@ -36,13 +36,13 @@ const StyledIntro = styled.div`
 const Intro: React.FC = () => {
   return (
     <StyledIntro>
+      <div>I am Feng Xiong</div>
       <Animated
         animationIn='fadeInLeft'
-        animationInDuration={1500}
+        animationInDuration={2000}
         animationOut='fadeOut'
         isVisible={true}
       >
-        <div>I am Feng Xiong</div>
         <div className='pos'>Front-end developer</div>
         <div className='pos'>UI design enthusiastic</div>
 

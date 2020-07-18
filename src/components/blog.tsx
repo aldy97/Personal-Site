@@ -5,9 +5,8 @@ import { StyledProjects } from './projects';
 import { Card, Tag } from 'antd';
 import styled from 'styled-components';
 import theme from '../theme/theme';
-import 'antd/dist/antd.css';
 import { Animated } from 'react-animated-css';
-import LazyLoad from 'react-lazyload';
+import 'antd/dist/antd.css';
 
 const StyledBlog = styled(StyledProjects)``;
 const StyledCard = styled(Card)`
@@ -31,32 +30,37 @@ const { Meta } = Card;
 const Blog: React.FC = () => {
   return (
     <StyledBlog>
-      <LazyLoad height={100}>
-        <Animated
-          animationIn='fadeInDown'
-          animationInDuration={1500}
-          animationOut='fadeIn'
-          isVisible={true}
-        >
-          <div className='title'>Blog</div>
-        </Animated>
-      </LazyLoad>
+      <Animated
+        animationIn='fadeInDown'
+        animationInDuration={1000}
+        animationOut='fadeIn'
+        isVisible={true}
+      >
+        <div className='title'>Blog</div>
+      </Animated>
       {blogList.map((blog: blog, index: number) => {
         return (
-          <StyledCard
-            key={index}
-            cover={<img alt='' src={blog.pic} />}
-            hoverable={true}
+          <Animated
+            animationIn='fadeInUp'
+            animationInDuration={1500}
+            animationOut='fadeIn'
+            isVisible={true}
           >
-            <Meta title={blog.title} description={blog.desc} />
-            {blog.tags.map((tag: tag, index: number) => {
-              return (
-                <StyledTag key={index} color={tag.color}>
-                  {tag.name}
-                </StyledTag>
-              );
-            })}
-          </StyledCard>
+            <StyledCard
+              key={index}
+              cover={<img alt='' src={blog.pic} />}
+              hoverable={true}
+            >
+              <Meta title={blog.title} description={blog.desc} />
+              {blog.tags.map((tag: tag, index: number) => {
+                return (
+                  <StyledTag key={index} color={tag.color}>
+                    {tag.name}
+                  </StyledTag>
+                );
+              })}
+            </StyledCard>
+          </Animated>
         );
       })}
     </StyledBlog>
