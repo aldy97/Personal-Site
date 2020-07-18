@@ -19,6 +19,8 @@ const theme: themeProps = {
   $nodeGreen: '#68A063',
   $expressGreen: '#3C873A',
   $themeColor: 'rgb(0, 122, 204)',
+  //on Mobile end
+  $mobileWidth: '300px',
 };
 
 export default theme;

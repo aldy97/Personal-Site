@@ -29,8 +29,14 @@ const Footer: React.FC = () => {
   return (
     <StyledFooter>
       <a className='iconfont icon-github' href='https://github.com/aldy97'></a>
-      <a className='iconfont icon-linkedin'></a>
-      <a className='iconfont icon-emailmarketing_filled'></a>
+      <a
+        className='iconfont icon-linkedin'
+        href='https://www.linkedin.com/in/feng-xiong-ba3a76166/'
+      ></a>
+      <a
+        className='iconfont icon-emailmarketing_filled'
+        href='mailto:fengxiong34@gmail.com'
+      ></a>
     </StyledFooter>
   );
 };
