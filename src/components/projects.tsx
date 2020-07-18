@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import theme from '../theme/theme';
 import { Card, Tag, Progress } from 'antd';
 import 'antd/dist/antd.css';
+import { Animated } from 'react-animated-css';
+import LazyLoad from 'react-lazyload';
 
 export const StyledProjects = styled.div`
   .title {
@@ -27,29 +29,45 @@ export const StyledCard = styled(Card)`
 const Projects: React.FC = () => {
   return (
     <StyledProjects>
-      <div className='title'>Projects</div>
+      <Animated
+        animationIn='fadeInDown'
+        animationInDuration={1500}
+        animationOut='fadeIn'
+        isVisible={true}
+      >
+        <div className='title'>Projects</div>
+      </Animated>
       {projectsList.map((item: Project, index: number) => {
         return (
-          <StyledCard
-            title={item.title}
-            extra={<a href={item.link}>More</a>}
-            key={index}
-          >
-            <p>{item.intro}</p>
-            <p>{item.status}</p>
-            <p>
-              <Progress percent={item.percent} />
-            </p>
-            <p>
-              {item.tags.map((tag: tag, index: number) => {
-                return (
-                  <Tag color={tag.color} key={index}>
-                    {tag.name}
-                  </Tag>
-                );
-              })}
-            </p>
-          </StyledCard>
+          <LazyLoad height={100}>
+            <Animated
+              animationIn='fadeInUp'
+              animationInDuration={1500}
+              animationOut='fadeIn'
+              isVisible={true}
+            >
+              <StyledCard
+                title={item.title}
+                extra={<a href={item.link}>More</a>}
+                key={index}
+              >
+                <p>{item.intro}</p>
+                <p>{item.status}</p>
+                <p>
+                  <Progress percent={item.percent} />
+                </p>
+                <p>
+                  {item.tags.map((tag: tag, index: number) => {
+                    return (
+                      <Tag color={tag.color} key={index}>
+                        {tag.name}
+                      </Tag>
+                    );
+                  })}
+                </p>
+              </StyledCard>
+            </Animated>
+          </LazyLoad>
         );
       })}
     </StyledProjects>

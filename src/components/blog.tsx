@@ -6,6 +6,8 @@ import { Card, Tag } from 'antd';
 import styled from 'styled-components';
 import theme from '../theme/theme';
 import 'antd/dist/antd.css';
+import { Animated } from 'react-animated-css';
+import LazyLoad from 'react-lazyload';
 
 const StyledBlog = styled(StyledProjects)``;
 const StyledCard = styled(Card)`
@@ -29,7 +31,16 @@ const { Meta } = Card;
 const Blog: React.FC = () => {
   return (
     <StyledBlog>
-      <div className='title'>Blog</div>
+      <LazyLoad height={100}>
+        <Animated
+          animationIn='fadeInDown'
+          animationInDuration={1500}
+          animationOut='fadeIn'
+          isVisible={true}
+        >
+          <div className='title'>Blog</div>
+        </Animated>
+      </LazyLoad>
       {blogList.map((blog: blog, index: number) => {
         return (
           <StyledCard
