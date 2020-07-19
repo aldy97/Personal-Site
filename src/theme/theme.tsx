@@ -10,7 +10,7 @@ const theme: themeProps = {
   $introFontSize: '36px',
   $titleSize: '48px',
   $marginSection: '40px',
-  $blogWidth: '765px',
+  $blogWidth: '800px',
   //colors
   $footerBorderColor: 'rgb(3, 37, 108)',
   $tsBlue: 'rgb(0, 122, 204)',
@@ -20,7 +20,7 @@ const theme: themeProps = {
   $expressGreen: '#3C873A',
   $themeColor: 'rgb(0, 122, 204)',
   //on Mobile end
-  $mobileWidth: '300px',
+  $mobileWidth: 'calc(85vw)',
 };
 
 export default theme;

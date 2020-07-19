@@ -14,6 +14,7 @@ const BlogSwitcher = styled.div`
   cursor: pointer;
   div {
     margin-left: 20px;
+    margin-right: 20px;
     font-size: 18px;
   }
   @media (max-width: 500px) {

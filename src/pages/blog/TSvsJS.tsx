@@ -11,8 +11,8 @@ export const StyledBlog = styled.div`
   margin-top: ${theme.$marginSection};
   text-align: center;
   p {
-    margin-top: ${theme.$marginSection};
-    margin-bottom: ${theme.$marginSection};
+    // margin-top: ${theme.$marginSection};
+    // margin-bottom: ${theme.$marginSection};
     font-size: ${theme.$headerFontSize};
     text-align: left;
   }
@@ -36,19 +36,28 @@ export const StyledTitle = styled.div`
   }
 `;
 
-export const ImgHolder = styled.div`
-  width: ${theme.$blogWidth};
-  height: 425px;
+type ImgHolderProps = {
+  width?: number;
+  height?: number;
+  mobileHeight?: number;
+};
+
+export const ImgHolder = styled.div<ImgHolderProps>`
+  width: ${(props) => (props.width ? `${props.width}px` : theme.$blogWidth)};
+  height: ${(props) => (props.height ? `${props.height}px` : '')};
+  margin-bottom: ${theme.$marginSection};
   img {
-    width: ${theme.$blogWidth};
-    height: 425px;
+    width: ${(props) => (props.width ? `${props.width}px` : theme.$blogWidth)};
+    height: ${(props) => (props.height ? `${props.height}px` : '')};
   }
   @media (max-width: 500px) {
     width: ${theme.$mobileWidth};
-    height: 180px;
+    height: ${(props) =>
+      props.mobileHeight ? `${props.mobileHeight}px` : '180px'};
     img {
       width: ${theme.$mobileWidth};
-      height: 170px;
+      height: ${(props) =>
+        props.mobileHeight ? `${props.mobileHeight}px` : '180px'};
       object-fit: fill;
     }
   }
@@ -103,23 +112,15 @@ const TSvsJS: React.FC = () => {
         </ul>
       </p>
       <p style={{ marginBottom: 0 }}>Now let's have look at a specific case:</p>
-      <ImgHolder style={{ width: 300, height: 200 }}>
-        <img
-          alt=''
-          src={require('../../static/TSvsJS/248.png')}
-          style={{ objectFit: 'contain', width: 300, height: 200 }}
-        />
+      <ImgHolder width={300} height={200}>
+        <img alt='' src={require('../../static/TSvsJS/248.png')} />
       </ImgHolder>
       <p>
         I created a type called 'tag', which contains two fields: both of them
         are of string.
       </p>
-      <ImgHolder>
-        <img
-          alt=''
-          src={require('../../static/TSvsJS/247.png')}
-          style={{ objectFit: 'cover' }}
-        />
+      <ImgHolder mobileHeight={350}>
+        <img alt='' src={require('../../static/TSvsJS/247.png')} />
       </ImgHolder>
       <p>
         Since I have declared tag as type 'tag', which I have defined
