@@ -20,7 +20,7 @@ const blogList: blog[] = [
       { color: theme.$jsYellow, name: 'JavaScript' },
       { color: theme.$tsBlue, name: 'TypeScript' },
     ],
-    href: '/blog/TSvsJS',
+    href: '/blog/0',
   },
   {
     title: 'Hooks Overview',
@@ -31,7 +31,7 @@ const blogList: blog[] = [
       { color: theme.$jsYellow, name: 'JavaScript' },
       { color: theme.$reactBlue, name: 'React' },
     ],
-    href: '/blog/Hooks',
+    href: '/blog/1',
   },
   {
     title: '5 Ways to Center Align in CSS',
