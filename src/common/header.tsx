@@ -62,7 +62,13 @@ const Header: React.FC = () => {
         <strong>Feng (Aldy) Xiong</strong>
       </span>
       <span className='right'>
-        <span>Blog</span>
+        <span
+          onClick={() => {
+            window.location.href = '/blog';
+          }}
+        >
+          Blog
+        </span>
         <span>Projects</span>
         <a
           style={{ marginRight: 0 }}

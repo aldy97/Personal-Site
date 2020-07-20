@@ -1,7 +1,7 @@
 import React from 'react';
 import blogList, { blog } from './blogList';
 import { tag } from './projectsList';
-import { StyledProjects } from './projects';
+import { StyledProjects, StyledButton } from './projects';
 import { Card, Tag } from 'antd';
 import styled from 'styled-components';
 import theme from '../theme/theme';
@@ -9,13 +9,17 @@ import { Animated } from 'react-animated-css';
 import 'antd/dist/antd.css';
 
 const StyledBlog = styled(StyledProjects)``;
-const StyledCard = styled(Card)`
+
+type CardProps = {
+  width: number;
+};
+const StyledCard = styled(Card)<CardProps>`
   margin-top: ${theme.$marginSection};
   margin-bottom: ${theme.$marginSection};
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
-  width: 800px;
+  width: ${(props) => `${props.width}px`};
   @media (max-width: 500px) {
     width: 350px;
   }
@@ -27,7 +31,12 @@ const StyledTag = styled(Tag)`
 
 const { Meta } = Card;
 
-const Blog: React.FC = () => {
+type BlogProps = {
+  width: number;
+  blogNum: number;
+  showButton: boolean;
+};
+const Blog = ({ width, blogNum, showButton }: BlogProps) => {
   return (
     <StyledBlog>
       <Animated
@@ -38,7 +47,7 @@ const Blog: React.FC = () => {
       >
         <div className='title'>Blog</div>
       </Animated>
-      {blogList.map((blog: blog, index: number) => {
+      {blogList.slice(0, blogNum).map((blog: blog, index: number) => {
         return (
           <Animated
             animationIn='fadeInUp'
@@ -50,6 +59,7 @@ const Blog: React.FC = () => {
               key={index}
               cover={<img alt='' src={blog.pic} />}
               hoverable={true}
+              width={width}
               onClick={() => {
                 window.location.href = blog.href;
               }}
@@ -66,6 +76,14 @@ const Blog: React.FC = () => {
           </Animated>
         );
       })}
+      <StyledButton
+        show={showButton}
+        onClick={() => {
+          window.location.href = '/blog';
+        }}
+      >
+        View all posts
+      </StyledButton>
     </StyledBlog>
   );
 };

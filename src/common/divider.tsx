@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import theme from '../theme/theme';
 
 const StyledDivider = styled.hr<DividerProps>`
+  margin-top: ${theme.$marginSection};
   margin-left: auto;
   margin-right: auto;
   border: 1px solid ${theme.$dividerColor};

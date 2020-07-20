@@ -12,6 +12,10 @@ export const StyledProjects = styled.div`
     font-size: ${theme.$titleSize};
     text-align: center;
   }
+  div {
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 export const StyledCard = styled(Card)`
@@ -25,7 +29,30 @@ export const StyledCard = styled(Card)`
   }
 `;
 
-const Projects: React.FC = () => {
+export type ButtonProps = {
+  show: boolean;
+};
+export const StyledButton = styled.div<ButtonProps>`
+  width: 150px;
+  height: 42px;
+  line-height: 42px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+  background: ${theme.$themeColor};
+  display: ${(props) => (props.show === false ? 'none' : 'auto')};
+  &: hover {
+    background: #fff;
+    color: ${theme.$themeColor};
+    border: 1px solid ${theme.$themeColor};
+  }
+`;
+
+type ProjectSProps = {
+  showButton: boolean;
+};
+const Projects = ({ showButton }: ProjectSProps) => {
   return (
     <StyledProjects>
       <Animated
@@ -67,6 +94,14 @@ const Projects: React.FC = () => {
           </Animated>
         );
       })}
+      <StyledButton
+        show={showButton}
+        onClick={() => {
+          window.location.href = '/projects';
+        }}
+      >
+        View all projects
+      </StyledButton>
     </StyledProjects>
   );
 };

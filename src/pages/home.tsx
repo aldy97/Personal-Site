@@ -8,9 +8,9 @@ const Home: React.FC = () => {
   return (
     <div>
       <Intro />
-      <Projects />
+      <Projects showButton={true} />
       <Divider />
-      <Blog />
+      <Blog width={800} blogNum={3} showButton={true} />
     </div>
   );
 };
