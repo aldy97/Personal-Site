@@ -12,7 +12,7 @@ const theme: themeProps = {
   $titleSize: '48px',
   $marginSection: '40px',
   $marginPic: '20px',
-  $blogWidth: '800px',
+
   //colors
   $footerBorderColor: 'rgb(3, 37, 108)',
   $tsBlue: 'rgb(0, 122, 204)',
@@ -23,6 +23,7 @@ const theme: themeProps = {
   $themeColor: 'rgb(0, 122, 204)',
   $publishTimeColor: '#8c8c8c',
   $dividerColor: `rgba(46, 116, 201, 0.2)`,
+
   //on Mobile end
   $mobileWidth: '350px',
 };

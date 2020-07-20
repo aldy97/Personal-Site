@@ -78,6 +78,7 @@ const Blog = ({ width, blogNum, showButton }: BlogProps) => {
       })}
       <StyledButton
         show={showButton}
+        className='button'
         onClick={() => {
           window.location.href = '/blog';
         }}

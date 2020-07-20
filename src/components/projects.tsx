@@ -12,18 +12,22 @@ export const StyledProjects = styled.div`
     font-size: ${theme.$titleSize};
     text-align: center;
   }
-  div {
+  .button {
     margin-left: auto;
     margin-right: auto;
   }
 `;
 
-export const StyledCard = styled(Card)`
+type CardProps = {
+  width: number;
+};
+
+export const StyledCard = styled(Card)<CardProps>`
   margin-top: ${theme.$marginSection};
   margin-bottom: ${theme.$marginSection};
   margin-left: auto;
   margin-right: auto;
-  width: 600px;
+  width: ${(props) => `${props.width}px`};
   @media (max-width: 500px) {
     width: 350px;
   }
@@ -50,9 +54,11 @@ export const StyledButton = styled.div<ButtonProps>`
 `;
 
 type ProjectSProps = {
+  width: number;
+  proNum: number;
   showButton: boolean;
 };
-const Projects = ({ showButton }: ProjectSProps) => {
+const Projects = ({ width, proNum, showButton }: ProjectSProps) => {
   return (
     <StyledProjects>
       <Animated
@@ -63,7 +69,7 @@ const Projects = ({ showButton }: ProjectSProps) => {
       >
         <div className='title'>Projects</div>
       </Animated>
-      {projectsList.map((item: Project, index: number) => {
+      {projectsList.slice(0, proNum).map((item: Project, index: number) => {
         return (
           <Animated
             animationIn='fadeInUp'
@@ -74,6 +80,7 @@ const Projects = ({ showButton }: ProjectSProps) => {
             <StyledCard
               title={item.title}
               extra={<a href={item.link}>More</a>}
+              width={width}
               key={index}
             >
               <p>{item.intro}</p>
@@ -95,6 +102,7 @@ const Projects = ({ showButton }: ProjectSProps) => {
         );
       })}
       <StyledButton
+        className='button'
         show={showButton}
         onClick={() => {
           window.location.href = '/projects';
