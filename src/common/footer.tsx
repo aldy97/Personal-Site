@@ -10,7 +10,7 @@ const StyledFooter = styled.div`
   border-top: 1px solid ${theme.$themeColor};
   a {
     color: ${theme.$themeColor};
-    font-size: ${theme.$iconSize};
+    font-size: ${theme.$headerFontSize};
     margin-right: 20px;
     cursor: pointer;
   }
@@ -28,15 +28,9 @@ const StyledFooter = styled.div`
 const Footer: React.FC = () => {
   return (
     <StyledFooter>
-      <a className='iconfont icon-github' href='https://github.com/aldy97'></a>
-      <a
-        className='iconfont icon-linkedin'
-        href='https://www.linkedin.com/in/feng-xiong-ba3a76166/'
-      ></a>
-      <a
-        className='iconfont icon-emailmarketing_filled'
-        href='mailto:fengxiong34@gmail.com'
-      ></a>
+      <a href='https://github.com/aldy97'>Github</a>
+      <a href='https://www.linkedin.com/in/feng-xiong-ba3a76166/'>Linkedin</a>
+      <a href='mailto:fengxiong34@gmail.com'>Email</a>
     </StyledFooter>
   );
 };

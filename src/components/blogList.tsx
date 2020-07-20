@@ -3,6 +3,7 @@ import theme from '../theme/theme';
 
 export interface blog {
   title: string;
+  time: string;
   desc: string;
   link: string;
   pic: any;
@@ -13,6 +14,7 @@ export interface blog {
 const blogList: blog[] = [
   {
     title: `Typescript vs JavaScript: What's the Difference?`,
+    time: 'July 18, 2020',
     desc: 'Whether it is necessary to switch to TS from JS?',
     link: 'https://www.guru99.com/typescript-vs-javascript.html',
     pic: require('../static/TSvsJS.jpg'),
@@ -24,6 +26,7 @@ const blogList: blog[] = [
   },
   {
     title: 'Hooks Overview',
+    time: 'June 04, 2020',
     desc: 'React Hook has been very trending recently...',
     link: 'https://zh-hans.reactjs.org/docs/hooks-overview.html',
     pic: require('../static/Hook.png'),
@@ -35,6 +38,7 @@ const blogList: blog[] = [
   },
   {
     title: '5 Ways to Center Align in CSS',
+    time: '',
     desc: 'CSS is honestly tedious',
     link: 'https://cgao.info/5-ways-to-center-align-in-css',
     pic: require('../static/CSS.jpg'),

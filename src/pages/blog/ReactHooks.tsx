@@ -1,16 +1,17 @@
 import React from 'react';
-import PrevNextCard from './PrevNextCard';
-import { StyledBlog, StyledTitle, ImgHolder } from './TSvsJS';
+import PrevNextCard from './components/PrevNextCard';
+import Category from './components/Category';
+import { StyledBlog, StyledTitle, ImgHolder, PublishedTime } from './TSvsJS';
 import blogList from '../../components/blogList';
 
 const ReactHooks: React.FC = () => {
   const index: number = 1;
-  const receivedblogList = blogList;
-  const thisBlog = receivedblogList[index];
+  const thisBlog = blogList[index];
   return (
     <StyledBlog>
       <StyledTitle>{thisBlog.title}</StyledTitle>
-      <ImgHolder height={350} width={800}>
+      <PublishedTime>Published on {thisBlog.time}</PublishedTime>
+      <ImgHolder height={350} width={800} mobileHeight={150}>
         <img alt='' src={thisBlog.pic} />
       </ImgHolder>
       <p>
@@ -25,6 +26,7 @@ const ReactHooks: React.FC = () => {
         Hooks are powerful, and it allows for functional components to harness
         that power.
       </p>
+      <Category tagList={thisBlog.tags}></Category>
       <PrevNextCard index={1} />
     </StyledBlog>
   );

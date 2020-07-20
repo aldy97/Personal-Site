@@ -1,6 +1,7 @@
 import React from 'react';
-import PrevNextCard from './PrevNextCard';
+import PrevNextCard from './components/PrevNextCard';
 import blogList, { blog } from '../../components/blogList';
+import Category from './components/Category';
 import styled from 'styled-components';
 import theme from '../../theme/theme';
 
@@ -11,8 +12,6 @@ export const StyledBlog = styled.div`
   margin-top: ${theme.$marginSection};
   text-align: center;
   p {
-    // margin-top: ${theme.$marginSection};
-    // margin-bottom: ${theme.$marginSection};
     font-size: ${theme.$headerFontSize};
     text-align: left;
   }
@@ -30,7 +29,6 @@ export const StyledTitle = styled.div`
   color: ${theme.$themeColor};
   font-size: ${theme.$titleSize};
   font-weight: 800;
-  margin-bottom: ${theme.$marginSection};
   @media (max-width: 500px) {
     font-size: 28px;
   }
@@ -45,7 +43,8 @@ type ImgHolderProps = {
 export const ImgHolder = styled.div<ImgHolderProps>`
   width: ${(props) => (props.width ? `${props.width}px` : theme.$blogWidth)};
   height: ${(props) => (props.height ? `${props.height}px` : '')};
-  margin-bottom: ${theme.$marginSection};
+  margin-bottom: ${theme.$marginPic};
+  margin-top: ${theme.$marginPic};
   img {
     width: ${(props) => (props.width ? `${props.width}px` : theme.$blogWidth)};
     height: ${(props) => (props.height ? `${props.height}px` : '')};
@@ -58,18 +57,27 @@ export const ImgHolder = styled.div<ImgHolderProps>`
       width: ${theme.$mobileWidth};
       height: ${(props) =>
         props.mobileHeight ? `${props.mobileHeight}px` : '180px'};
-      object-fit: fill;
     }
+  }
+`;
+
+export const PublishedTime = styled.div`
+  text-align: left;
+  color: ${theme.$publishTimeColor};
+  font-size: ${theme.$publishTimeFontSize};
+  font-weight: 150;
+  @media (max-width: 500px) {
+    text-align: center;
   }
 `;
 
 const TSvsJS: React.FC = () => {
   const index: number = 0;
-  const receivedblogList: blog[] = blogList;
-  const thisBlog = receivedblogList[index];
+  const thisBlog = blogList[index];
   return (
     <StyledBlog>
       <StyledTitle>{thisBlog.title}</StyledTitle>
+      <PublishedTime>Published on {thisBlog.time}</PublishedTime>
       <ImgHolder>
         <img alt='' src={thisBlog.pic} />
       </ImgHolder>
@@ -130,6 +138,7 @@ const TSvsJS: React.FC = () => {
         greatly boots development speed and increases robustness. This would
         have not been accomplished if using JavaScript.
       </p>
+      <Category tagList={thisBlog.tags}></Category>
       <PrevNextCard index={index} />
     </StyledBlog>
   );

@@ -6,10 +6,12 @@ const theme: themeProps = {
   $headerHeight: '60px',
   $headerWidth: '1200px',
   $headerFontSize: '18px',
+  $publishTimeFontSize: '16px',
   $iconSize: '36px',
   $introFontSize: '36px',
   $titleSize: '48px',
   $marginSection: '40px',
+  $marginPic: '20px',
   $blogWidth: '800px',
   //colors
   $footerBorderColor: 'rgb(3, 37, 108)',
@@ -19,8 +21,9 @@ const theme: themeProps = {
   $nodeGreen: '#68A063',
   $expressGreen: '#3C873A',
   $themeColor: 'rgb(0, 122, 204)',
+  $publishTimeColor: '#c0c0c0',
   //on Mobile end
-  $mobileWidth: 'calc(85vw)',
+  $mobileWidth: '350px',
 };
 
 export default theme;
