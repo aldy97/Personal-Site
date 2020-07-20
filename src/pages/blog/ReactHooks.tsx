@@ -12,7 +12,7 @@ const ReactHooks: React.FC = () => {
     <StyledBlog>
       <StyledTitle>{thisBlog.title}</StyledTitle>
       <PublishedTime>Published on {date}</PublishedTime>
-      <ImgHolder height={350} width={800} mobileHeight={150}>
+      <ImgHolder height={350} mobileHeight={150}>
         <img alt='' src={thisBlog.pic} />
       </ImgHolder>
       <p>
@@ -33,8 +33,18 @@ const ReactHooks: React.FC = () => {
         functional component, while it dramatically expands conditions in which
         functional component can be used.
       </p>
+      <p>
+        At React's official website, it has a page that says that they encourage
+        people to write functional component as long as they possibly can in the
+        future. However, it is not wise to rewrite class components that have
+        already been done. At the same time, the React team would continuously
+        contribute to development of class components. So do no get depressed if
+        you feel uncomfortable with using functional components!
+        Performance-wise, functional components are not obviously more efficient
+        than class components.
+      </p>
       <Category tagList={thisBlog.tags}></Category>
-      <PrevNextCard index={1} />
+      <PrevNextCard index={index} />
     </StyledBlog>
   );
 };

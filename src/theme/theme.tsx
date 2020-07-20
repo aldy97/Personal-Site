@@ -21,7 +21,8 @@ const theme: themeProps = {
   $nodeGreen: '#68A063',
   $expressGreen: '#3C873A',
   $themeColor: 'rgb(0, 122, 204)',
-  $publishTimeColor: '#c0c0c0',
+  $publishTimeColor: '#8c8c8c',
+  $dividerColor: `rgba(46, 116, 201, 0.2)`,
   //on Mobile end
   $mobileWidth: '350px',
 };

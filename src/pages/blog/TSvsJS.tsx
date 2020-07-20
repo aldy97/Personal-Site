@@ -1,6 +1,6 @@
 import React from 'react';
 import PrevNextCard from '../../components/PrevNextCard';
-import blogList, { blog } from '../../components/blogList';
+import blogList from '../../components/blogList';
 import Category from '../../components/Category';
 import styled from 'styled-components';
 import theme from '../../theme/theme';

@@ -26,7 +26,7 @@ const blogList: blog[] = [
   {
     title: 'Hooks Overview',
     time: dayjs('2020-06-04'),
-    desc: 'React Hook has been very trending recently...',
+    desc: 'React Hook innovatively enhances functional components',
     pic: require('../static/Hook.png'),
     tags: [
       { color: theme.$jsYellow, name: 'JavaScript' },
@@ -35,12 +35,12 @@ const blogList: blog[] = [
     href: '/blog/1',
   },
   {
-    title: '5 Ways to Center Align in CSS',
+    title: 'Content Render',
     time: dayjs('2020-05-12'),
-    desc: 'CSS is honestly tedious',
-    pic: require('../static/CSS.jpg'),
-    tags: [{ color: theme.$tsBlue, name: 'CSS' }],
-    href: '/blog/CSS',
+    desc: 'Things need to be considered when content being rendered',
+    pic: require('../static/UXUI.png'),
+    tags: [{ color: theme.$tsBlue, name: 'UI/UX' }],
+    href: '/blog/2',
   },
 ];
 

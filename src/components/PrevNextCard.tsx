@@ -8,7 +8,7 @@ const BlogSwitcher = styled.div`
   margin-top: ${theme.$marginSection};
   padding-top: 15px;
   padding-bottom: 15px;
-  border: 1px solid ${theme.$themeColor};
+  border: 1px solid ${theme.$dividerColor};
   border-radius: 6px;
   text-align: left;
   cursor: pointer;
@@ -16,6 +16,9 @@ const BlogSwitcher = styled.div`
     margin-left: 20px;
     margin-right: 20px;
     font-size: 18px;
+  }
+  &: hover {
+    border: 1px solid ${theme.$themeColor};
   }
   @media (max-width: 500px) {
     width: ${theme.$mobileWidth};
@@ -45,6 +48,7 @@ const PrevNextCard = ({ index }: prevNextCardProps) => {
       )}
       {index !== blogList.length - 1 ? (
         <BlogSwitcher
+          style={{ textAlign: 'right' }}
           onClick={() => {
             window.location.href = blogList[index + 1].href;
           }}
