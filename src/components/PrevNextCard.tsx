@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import theme from '../../../theme/theme';
-import blogList from '../../../components/blogList';
+import theme from '../theme/theme';
+import blogList from './blogList';
 
 const BlogSwitcher = styled.div`
   width: ${theme.$blogWidth};

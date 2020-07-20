@@ -1,7 +1,7 @@
 import React from 'react';
-import PrevNextCard from './components/PrevNextCard';
+import PrevNextCard from '../../components/PrevNextCard';
 import blogList, { blog } from '../../components/blogList';
-import Category from './components/Category';
+import Category from '../../components/Category';
 import styled from 'styled-components';
 import theme from '../../theme/theme';
 
@@ -74,10 +74,11 @@ export const PublishedTime = styled.div`
 const TSvsJS: React.FC = () => {
   const index: number = 0;
   const thisBlog = blogList[index];
+  const date = thisBlog.time.format('YYYY - MM - DD');
   return (
     <StyledBlog>
       <StyledTitle>{thisBlog.title}</StyledTitle>
-      <PublishedTime>Published on {thisBlog.time}</PublishedTime>
+      <PublishedTime>Published on {date}</PublishedTime>
       <ImgHolder>
         <img alt='' src={thisBlog.pic} />
       </ImgHolder>

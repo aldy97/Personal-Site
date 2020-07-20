@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { tag } from '../../../components/projectsList';
+import { tag } from './projectsList';
 import { Tag } from 'antd';
-import theme from '../../../theme/theme';
+import theme from '../theme/theme';
 
 const StyledCategory = styled.div`
   font-weight: bold;
