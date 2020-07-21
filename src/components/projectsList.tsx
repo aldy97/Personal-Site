@@ -22,9 +22,9 @@ const projectsList: Project[] = [
     status: 'Missing materials to finish projects section...',
     percent: 70,
     tags: [
-      { color: theme.$reactBlue, name: 'React' },
-      { color: theme.$reactBlue, name: 'Redux' },
-      { color: theme.$jsYellow, name: 'JavaScript' },
+      { color: theme.$reactBlue as string, name: 'React' },
+      { color: theme.$reactBlue as string, name: 'Redux' },
+      { color: theme.$jsYellow as string, name: 'JavaScript' },
     ],
   },
   {
@@ -34,10 +34,10 @@ const projectsList: Project[] = [
     status: 'Working on back-end in order to implement more functions...',
     percent: 50,
     tags: [
-      { color: theme.$reactBlue, name: 'React' },
-      { color: theme.$tsBlue, name: 'TypeScript' },
-      { color: theme.$nodeGreen, name: 'Node' },
-      { color: theme.$expressGreen, name: 'Express' },
+      { color: theme.$reactBlue as string, name: 'React' },
+      { color: theme.$tsBlue as string, name: 'TypeScript' },
+      { color: theme.$nodeGreen as string, name: 'Node' },
+      { color: theme.$expressGreen as string, name: 'Express' },
     ],
   },
   {
@@ -48,10 +48,10 @@ const projectsList: Project[] = [
       'Aiming to rewrite it with TypeScript and add more functions to it...',
     percent: 90,
     tags: [
-      { color: theme.$reactBlue, name: 'React' },
-      { color: theme.$reactBlue, name: 'Redux' },
-      { color: theme.$jsYellow, name: 'JavaScript' },
-      { color: theme.$tsBlue, name: 'TypeScript' },
+      { color: theme.$reactBlue as string, name: 'React' },
+      { color: theme.$reactBlue as string, name: 'Redux' },
+      { color: theme.$jsYellow as string, name: 'JavaScript' },
+      { color: theme.$tsBlue as string, name: 'TypeScript' },
     ],
   },
 ];

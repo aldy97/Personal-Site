@@ -18,8 +18,8 @@ const blogList: blog[] = [
     desc: 'Whether it is necessary to switch to TS from JS?',
     pic: require('../static/TSvsJS.jpg'),
     tags: [
-      { color: theme.$jsYellow, name: 'JavaScript' },
-      { color: theme.$tsBlue, name: 'TypeScript' },
+      { color: theme.$jsYellow as string, name: 'JavaScript' },
+      { color: theme.$tsBlue as string, name: 'TypeScript' },
     ],
     href: '/blog/0',
   },
@@ -29,8 +29,8 @@ const blogList: blog[] = [
     desc: 'React Hook innovatively enhances functional components',
     pic: require('../static/Hook.png'),
     tags: [
-      { color: theme.$jsYellow, name: 'JavaScript' },
-      { color: theme.$reactBlue, name: 'React' },
+      { color: theme.$jsYellow as string, name: 'JavaScript' },
+      { color: theme.$reactBlue as string, name: 'React' },
     ],
     href: '/blog/1',
   },
@@ -39,7 +39,7 @@ const blogList: blog[] = [
     time: dayjs('2020-07-12'),
     desc: 'Things need to be considered when content being rendered',
     pic: require('../static/UXUI.png'),
-    tags: [{ color: theme.$tsBlue, name: 'UI/UX' }],
+    tags: [{ color: theme.$tsBlue as string, name: 'UI/UX' }],
     href: '/blog/2',
   },
   {
@@ -48,7 +48,7 @@ const blogList: blog[] = [
     desc:
       'Making layout be adaptive to all screen size is important and critical',
     pic: require('../static/LayoutSolution.jpg'),
-    tags: [{ color: theme.$reactBlue, name: 'CSS' }],
+    tags: [{ color: theme.$reactBlue as string, name: 'CSS' }],
     href: '/blog/3',
   },
 ];

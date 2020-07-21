@@ -5,7 +5,7 @@ import ImgHolder from '../../components/ImgHolder';
 import theme from '../../theme/theme';
 
 export const StyledBlog = styled.div`
-  width: ${theme.$blogWidth};
+  width: ${theme.$blogWidth}px;
   margin-left: auto;
   margin-right: auto;
   margin-top: ${theme.$marginSection};
@@ -15,7 +15,7 @@ export const StyledBlog = styled.div`
     text-align: left;
   }
   @media (max-width: 500px) {
-    width: ${theme.$mobileWidth};
+    width: ${theme.$mobileWidth}px;
     p {
       margin-top: 10px;
       margin-bottom: 10px;
@@ -82,16 +82,19 @@ const content = [
     </ul>
   </p>,
   <p style={{ marginBottom: 0 }}>Now let's have look at a specific case:</p>,
-  <ImgHolder width={300} height={200}>
-    <img alt='' src={require('../../static/TSvsJS/248.png')} />
-  </ImgHolder>,
+  <ImgHolder
+    width={300}
+    height={200}
+    src={require('../../static/TSvsJS/248.png')}
+  ></ImgHolder>,
   <p>
     I created a type called 'tag', which contains two fields: both of them are
     of string.
   </p>,
-  <ImgHolder mobileHeight={350}>
-    <img alt='' src={require('../../static/TSvsJS/247.png')} />
-  </ImgHolder>,
+  <ImgHolder
+    mobileHeight={350}
+    src={require('../../static/TSvsJS/247.png')}
+  ></ImgHolder>,
   <p>
     Since I have declared tag as type 'tag', which I have defined previously. VS
     code now can <strong>auto-generate</strong> its corresponding properties.

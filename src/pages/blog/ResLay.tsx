@@ -5,9 +5,7 @@ import ImgHolder from '../../components/ImgHolder';
 
 const content = [
   <SubTitle>1. Static Layout</SubTitle>,
-  <ImgHolder>
-    <img alt='' src={require('../../static/LayOutPic/static.png')} />
-  </ImgHolder>,
+  <ImgHolder src={require('../../static/LayOutPic/static.png')}></ImgHolder>,
   <p>
     A static page layout (sometimes called a “fixed” layout or “fixed width”
     layout) uses a preset page size and does not change based on the browser
@@ -34,9 +32,7 @@ const content = [
     responsive design just yet.
   </p>,
   <SubTitle>2. Liquid Page Layout</SubTitle>,
-  <ImgHolder>
-    <img alt='' src={require('../../static/LayOutPic/liquid.png')} />
-  </ImgHolder>,
+  <ImgHolder src={require('../../static/LayOutPic/liquid.png')}></ImgHolder>,
   <p>
     A liquid page layout (sometimes called “fluid” or “fluid width”) uses
     relative units instead of fixed units. Typically a liquid layout will use
@@ -53,9 +49,7 @@ const content = [
     screen could be too crowded for the content.
   </p>,
   <SubTitle>3. Adaptive Page Layout</SubTitle>,
-  <ImgHolder>
-    <img alt='' src={require('../../static/LayOutPic/adaptive.png')} />
-  </ImgHolder>,
+  <ImgHolder src={require('../../static/LayOutPic/adaptive.png')}></ImgHolder>,
   <p>
     An adaptive page layout uses CSS media queries to detect the width of the
     browser and alter the layout accordingly. Adaptive layouts will use fixed
@@ -81,9 +75,9 @@ const content = [
     with either too much space or not enough space.
   </p>,
   <SubTitle>4. Responsive Page Layout</SubTitle>,
-  <ImgHolder>
-    <img alt='' src={require('../../static/LayOutPic/responsive.png')} />
-  </ImgHolder>,
+  <ImgHolder
+    src={require('../../static/LayOutPic/responsive.png')}
+  ></ImgHolder>,
   <p>
     A responsive page layout uses both relative units and media queries,
     ostensibly combining the ideas of a liquid layout and an adaptive layout. As

@@ -13,9 +13,10 @@ const content = [
   <SubTitle>
     <strong>Table</strong>
   </SubTitle>,
-  <ImgHolder mobileHeight={250}>
-    <img alt='' src={require('../../static/DataRender/Table.png')} />
-  </ImgHolder>,
+  <ImgHolder
+    mobileHeight={250}
+    src={require('../../static/DataRender/Table.png')}
+  ></ImgHolder>,
   <p>
     Table is considered as the clearest and most efficient way of rendering
     data. It is suitable in cases like{' '}
@@ -24,9 +25,10 @@ const content = [
   <SubTitle>
     <strong>Collapse</strong>
   </SubTitle>,
-  <ImgHolder mobileHeight={250}>
-    <img alt='' src={require('../../static/DataRender/Collapse.png')} />
-  </ImgHolder>,
+  <ImgHolder
+    mobileHeight={250}
+    src={require('../../static/DataRender/Collapse.png')}
+  ></ImgHolder>,
   <p>
     Collapse allows user to temporally show and hidden wanted and unwanted
     information by simply clicking bars. It is a good fit when we have a lot
@@ -36,9 +38,10 @@ const content = [
   <SubTitle>
     <strong>Carousel</strong>
   </SubTitle>,
-  <ImgHolder mobileHeight={250}>
-    <img alt='' src={require('../../static/DataRender/Carousel.png')} />
-  </ImgHolder>,
+  <ImgHolder
+    mobileHeight={250}
+    src={require('../../static/DataRender/Carousel.png')}
+  ></ImgHolder>,
   <p>
     A flat parallel content presentation, ususally used in{' '}
     <strong>website homepage</strong>. Keep in mind it is proper to have around
@@ -48,9 +51,10 @@ const content = [
   <SubTitle>
     <strong>Card</strong>
   </SubTitle>,
-  <ImgHolder mobileHeight={250}>
-    <img alt='' src={require('../../static/DataRender/Card.png')} />
-  </ImgHolder>,
+  <ImgHolder
+    mobileHeight={250}
+    src={require('../../static/DataRender/Card.png')}
+  ></ImgHolder>,
   <p>
     Card is a content container that does not have too much restrictions on type
     of content being held. It gives users a 'blocky' feeling, which means that

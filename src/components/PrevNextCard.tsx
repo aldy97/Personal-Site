@@ -4,7 +4,7 @@ import theme from '../theme/theme';
 import blogList from './blogList';
 
 const BlogSwitcher = styled.div`
-  width: ${theme.$blogWidth};
+  width: ${theme.$blogWidth}px;
   margin-top: ${theme.$marginSection};
   padding-top: 15px;
   padding-bottom: 15px;
@@ -21,7 +21,7 @@ const BlogSwitcher = styled.div`
     border: 1px solid ${theme.$themeColor};
   }
   @media (max-width: 500px) {
-    width: ${theme.$mobileWidth};
+    width: ${theme.$mobileWidth}px;
   }
 `;
 
