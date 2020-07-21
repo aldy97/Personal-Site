@@ -3,8 +3,8 @@ import projectsList, { Project, tag } from './projectsList';
 import styled from 'styled-components';
 import theme from '../theme/theme';
 import { Card, Tag, Progress } from 'antd';
+import Fade from 'react-reveal/Fade';
 import 'antd/dist/antd.css';
-import { Animated } from 'react-animated-css';
 
 export const StyledProjects = styled.div`
   .title {
@@ -62,22 +62,12 @@ type ProjectSProps = {
 const Projects = ({ width, proNum, showButton }: ProjectSProps) => {
   return (
     <StyledProjects>
-      <Animated
-        animationIn='fadeInDown'
-        animationInDuration={1500}
-        animationOut='fadeIn'
-        isVisible={true}
-      >
+      <Fade top>
         <div className='title'>Projects</div>
-      </Animated>
+      </Fade>
       {projectsList.slice(0, proNum).map((item: Project, index: number) => {
         return (
-          <Animated
-            animationIn='fadeInUp'
-            animationInDuration={1500}
-            animationOut='fadeIn'
-            isVisible={true}
-          >
+          <Fade bottom>
             <StyledCard
               title={item.title}
               extra={<a href={item.link}>More</a>}
@@ -99,18 +89,20 @@ const Projects = ({ width, proNum, showButton }: ProjectSProps) => {
                 })}
               </p>
             </StyledCard>
-          </Animated>
+          </Fade>
         );
       })}
-      <StyledButton
-        className='button'
-        show={showButton}
-        onClick={() => {
-          window.location.href = '/projects';
-        }}
-      >
-        View all projects
-      </StyledButton>
+      <Fade top>
+        <StyledButton
+          className='button'
+          show={showButton}
+          onClick={() => {
+            window.location.href = '/projects';
+          }}
+        >
+          View all projects
+        </StyledButton>
+      </Fade>
     </StyledProjects>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import theme from '../theme/theme';
-import { Animated } from 'react-animated-css';
+import Fade from 'react-reveal/Fade';
 
 const StyledIntro = styled.div`
   width: ${theme.$headerWidth};
@@ -37,12 +37,7 @@ const Intro: React.FC = () => {
   return (
     <StyledIntro>
       <div>I am Feng Xiong</div>
-      <Animated
-        animationIn='fadeInLeft'
-        animationInDuration={2000}
-        animationOut='fadeOut'
-        isVisible={true}
-      >
+      <Fade left>
         <div className='pos'>Front-end developer</div>
         <div className='pos'>UI design enthusiastic</div>
 
@@ -60,7 +55,7 @@ const Intro: React.FC = () => {
             href='mailto:fengxiong34@gmail.com'
           ></a>
         </div>
-      </Animated>
+      </Fade>
     </StyledIntro>
   );
 };

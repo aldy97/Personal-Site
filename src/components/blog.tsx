@@ -5,7 +5,7 @@ import { StyledProjects, StyledButton } from './projects';
 import { Card, Tag } from 'antd';
 import styled from 'styled-components';
 import theme from '../theme/theme';
-import { Animated } from 'react-animated-css';
+import Fade from 'react-reveal/Fade';
 import 'antd/dist/antd.css';
 
 const StyledBlog = styled(StyledProjects)``;
@@ -39,25 +39,15 @@ type BlogProps = {
 const Blog = ({ width, blogNum, showButton }: BlogProps) => {
   return (
     <StyledBlog>
-      <Animated
-        animationIn='fadeInDown'
-        animationInDuration={1000}
-        animationOut='fadeIn'
-        isVisible={true}
-      >
+      <Fade top>
         <div className='title'>Blog</div>
-      </Animated>
+      </Fade>
       {blogList
         .reverse()
         .slice(0, blogNum)
         .map((blog: blog, index: number) => {
           return (
-            <Animated
-              animationIn='fadeInUp'
-              animationInDuration={1500}
-              animationOut='fadeIn'
-              isVisible={true}
-            >
+            <Fade bottom>
               <StyledCard
                 key={index}
                 cover={<img alt='' src={blog.pic} />}
@@ -76,18 +66,20 @@ const Blog = ({ width, blogNum, showButton }: BlogProps) => {
                   );
                 })}
               </StyledCard>
-            </Animated>
+            </Fade>
           );
         })}
-      <StyledButton
-        show={showButton}
-        className='button'
-        onClick={() => {
-          window.location.href = '/blog';
-        }}
-      >
-        View all posts
-      </StyledButton>
+      <Fade top>
+        <StyledButton
+          show={showButton}
+          className='button'
+          onClick={() => {
+            window.location.href = '/blog';
+          }}
+        >
+          View all posts
+        </StyledButton>
+      </Fade>
     </StyledBlog>
   );
 };
