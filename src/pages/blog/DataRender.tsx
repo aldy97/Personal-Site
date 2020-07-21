@@ -60,7 +60,7 @@ const content = [
 ];
 
 const DataRender: React.FC = () => {
-  return <BlogLayout index={2} content={content} height={450}></BlogLayout>;
+  return <BlogLayout index={2} content={content} height={533}></BlogLayout>;
 };
 
 export default DataRender;

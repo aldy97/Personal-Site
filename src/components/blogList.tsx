@@ -43,11 +43,11 @@ const blogList: blog[] = [
     href: '/blog/2',
   },
   {
-    title: 'Feasible Solutions to Layout on Mobile',
-    time: dayjs('2020-07-120'),
+    title: 'Feasible Solutions to Layout',
+    time: dayjs('2020-07-20'),
     desc:
       'Making layout be adaptive to all screen size is important and critical',
-    pic: require('../static/CSS.jpg'),
+    pic: require('../static/LayoutSolution.jpg'),
     tags: [{ color: theme.$reactBlue, name: 'CSS' }],
     href: '/blog/3',
   },
