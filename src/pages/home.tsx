@@ -1,5 +1,4 @@
 import React from 'react';
-import theme from '../theme/theme';
 import Intro from '../components/intro';
 import Projects from '../components/projects';
 import Blog from '../components/blog';

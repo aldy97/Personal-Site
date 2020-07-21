@@ -12,6 +12,7 @@ const theme: themeProps = {
   $titleSize: '48px',
   $marginSection: '40px',
   $marginPic: '20px',
+  $blogWidth: '800px',
 
   //colors
   $footerBorderColor: 'rgb(3, 37, 108)',

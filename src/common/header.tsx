@@ -69,7 +69,13 @@ const Header: React.FC = () => {
         >
           Blog
         </span>
-        <span>Projects</span>
+        <span
+          onClick={() => {
+            window.location.href = '/projects';
+          }}
+        >
+          Projects
+        </span>
         <a
           style={{ marginRight: 0 }}
           href='https://drive.google.com/file/d/1JFUcNs16bV5_SvarKwQJ83JEw6JRjYC_/view'

@@ -47,35 +47,38 @@ const Blog = ({ width, blogNum, showButton }: BlogProps) => {
       >
         <div className='title'>Blog</div>
       </Animated>
-      {blogList.slice(0, blogNum).map((blog: blog, index: number) => {
-        return (
-          <Animated
-            animationIn='fadeInUp'
-            animationInDuration={1500}
-            animationOut='fadeIn'
-            isVisible={true}
-          >
-            <StyledCard
-              key={index}
-              cover={<img alt='' src={blog.pic} />}
-              hoverable={true}
-              width={width}
-              onClick={() => {
-                window.location.href = blog.href;
-              }}
+      {blogList
+        .reverse()
+        .slice(0, blogNum)
+        .map((blog: blog, index: number) => {
+          return (
+            <Animated
+              animationIn='fadeInUp'
+              animationInDuration={1500}
+              animationOut='fadeIn'
+              isVisible={true}
             >
-              <Meta title={blog.title} description={blog.desc} />
-              {blog.tags.map((tag: tag, index: number) => {
-                return (
-                  <StyledTag key={index} color={tag.color}>
-                    {tag.name}
-                  </StyledTag>
-                );
-              })}
-            </StyledCard>
-          </Animated>
-        );
-      })}
+              <StyledCard
+                key={index}
+                cover={<img alt='' src={blog.pic} />}
+                hoverable={true}
+                width={width}
+                onClick={() => {
+                  window.location.href = blog.href;
+                }}
+              >
+                <Meta title={blog.title} description={blog.desc} />
+                {blog.tags.map((tag: tag, index: number) => {
+                  return (
+                    <StyledTag key={index} color={tag.color}>
+                      {tag.name}
+                    </StyledTag>
+                  );
+                })}
+              </StyledCard>
+            </Animated>
+          );
+        })}
       <StyledButton
         show={showButton}
         className='button'

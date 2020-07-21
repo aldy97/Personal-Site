@@ -14,7 +14,7 @@ export interface blog {
 const blogList: blog[] = [
   {
     title: `Typescript vs JavaScript: What's the Difference?`,
-    time: dayjs('2020-07-18'),
+    time: dayjs('2020-05-18'),
     desc: 'Whether it is necessary to switch to TS from JS?',
     pic: require('../static/TSvsJS.jpg'),
     tags: [
@@ -36,11 +36,20 @@ const blogList: blog[] = [
   },
   {
     title: 'Content Render',
-    time: dayjs('2020-05-12'),
+    time: dayjs('2020-07-12'),
     desc: 'Things need to be considered when content being rendered',
     pic: require('../static/UXUI.png'),
     tags: [{ color: theme.$tsBlue, name: 'UI/UX' }],
     href: '/blog/2',
+  },
+  {
+    title: 'Feasible Solutions to Layout on Mobile',
+    time: dayjs('2020-07-120'),
+    desc:
+      'Making layout be adaptive to all screen size is important and critical',
+    pic: require('../static/CSS.jpg'),
+    tags: [{ color: theme.$reactBlue, name: 'CSS' }],
+    href: '/blog/3',
   },
 ];
 
