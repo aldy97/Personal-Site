@@ -1,18 +1,18 @@
 import theme from '../theme/theme';
 
+export type tag = {
+  color: string;
+  name: string;
+};
+
 export interface Project {
   title: string;
   link: string;
   intro: string;
   status: string;
-  percent: number;
+  percent: number; //progress percentage
   tags: tag[];
 }
-
-export type tag = {
-  color: string;
-  name: string;
-};
 
 const projectsList: Project[] = [
   {

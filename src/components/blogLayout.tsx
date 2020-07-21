@@ -4,7 +4,46 @@ import PrevNextCard from './PrevNextCard';
 import Category from './Category';
 import ImgHolder from './ImgHolder';
 import theme from '../theme/theme';
-import { StyledBlog, StyledTitle, PublishedTime } from '../pages/blog/TSvsJS';
+import styled from 'styled-components';
+
+const StyledBlog = styled.div`
+  width: ${theme.$blogWidth}px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: ${theme.$marginSection};
+  text-align: center;
+  p {
+    font-size: ${theme.$headerFontSize};
+    text-align: left;
+  }
+  @media (max-width: 500px) {
+    width: ${theme.$mobileWidth}px;
+    p {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+  }
+`;
+
+const StyledTitle = styled.div`
+  color: ${theme.$themeColor};
+  font-size: ${theme.$titleSize};
+  font-weight: 800;
+  @media (max-width: 500px) {
+    font-size: 28px;
+  }
+`;
+
+const PublishedTime = styled.div`
+  text-align: left;
+  color: ${theme.$publishTimeColor};
+  font-size: ${theme.$publishTimeFontSize};
+  font-weight: 300;
+  @media (max-width: 500px) {
+    text-align: center;
+  }
+`;
 
 type blogLayoutProps = {
   index: number;

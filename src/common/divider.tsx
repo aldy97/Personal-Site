@@ -9,7 +9,7 @@ const StyledDivider = styled.hr<DividerProps>`
   border: 1px solid ${theme.$dividerColor};
   width: ${(props) => (props.width ? `${props.width}px` : '1200px')};
   @media (max-width: 500px) {
-    width: 350px;
+    width: ${theme.$mobileWidth}px;
   }
 `;
 

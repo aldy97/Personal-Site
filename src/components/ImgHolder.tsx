@@ -6,7 +6,7 @@ type ImgHolderProps = {
   width?: number;
   height?: number;
   mobileHeight?: number;
-  src?: any;
+  src: any;
 };
 
 const StyledImgHolder = styled.div<ImgHolderProps>`
@@ -34,7 +34,12 @@ const StyledImgHolder = styled.div<ImgHolderProps>`
 
 const ImgHolder = ({ width, height, mobileHeight, src }: ImgHolderProps) => {
   return (
-    <StyledImgHolder width={width} height={height} mobileHeight={mobileHeight}>
+    <StyledImgHolder
+      width={width}
+      height={height}
+      mobileHeight={mobileHeight}
+      src={src}
+    >
       <img alt='' src={src}></img>
     </StyledImgHolder>
   );

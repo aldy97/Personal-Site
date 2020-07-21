@@ -1,47 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import BlogLayout from '../../components/blogLayout';
 import ImgHolder from '../../components/ImgHolder';
-import theme from '../../theme/theme';
-
-export const StyledBlog = styled.div`
-  width: ${theme.$blogWidth}px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: ${theme.$marginSection};
-  text-align: center;
-  p {
-    font-size: ${theme.$headerFontSize};
-    text-align: left;
-  }
-  @media (max-width: 500px) {
-    width: ${theme.$mobileWidth}px;
-    p {
-      margin-top: 10px;
-      margin-bottom: 10px;
-      font-size: 18px;
-    }
-  }
-`;
-
-export const StyledTitle = styled.div`
-  color: ${theme.$themeColor};
-  font-size: ${theme.$titleSize};
-  font-weight: 800;
-  @media (max-width: 500px) {
-    font-size: 28px;
-  }
-`;
-
-export const PublishedTime = styled.div`
-  text-align: left;
-  color: ${theme.$publishTimeColor};
-  font-size: ${theme.$publishTimeFontSize};
-  font-weight: 150;
-  @media (max-width: 500px) {
-    text-align: center;
-  }
-`;
 
 const content = [
   <p>

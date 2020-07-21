@@ -1,6 +1,5 @@
 import React from 'react';
-import blogList, { blog } from './blogList';
-import { tag } from './projectsList';
+import blogList from './blogList';
 import { StyledProjects, StyledButton } from './projects';
 import { Card, Tag } from 'antd';
 import styled from 'styled-components';
@@ -21,7 +20,7 @@ const StyledCard = styled(Card)<CardProps>`
   cursor: pointer;
   width: ${(props) => `${props.width}px`};
   @media (max-width: 500px) {
-    width: 350px;
+    width: ${theme.$mobileWidth}px;
   }
 `;
 
@@ -45,7 +44,7 @@ const Blog = ({ width, blogNum, showButton }: BlogProps) => {
       {blogList
         .reverse()
         .slice(0, blogNum)
-        .map((blog: blog, index: number) => {
+        .map((blog, index: number) => {
           return (
             <Fade bottom>
               <StyledCard
@@ -58,7 +57,7 @@ const Blog = ({ width, blogNum, showButton }: BlogProps) => {
                 }}
               >
                 <Meta title={blog.title} description={blog.desc} />
-                {blog.tags.map((tag: tag, index: number) => {
+                {blog.tags.map((tag, index: number) => {
                   return (
                     <StyledTag key={index} color={tag.color}>
                       {tag.name}

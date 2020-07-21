@@ -1,5 +1,5 @@
 import React from 'react';
-import projectsList, { Project, tag } from './projectsList';
+import projectsList from './projectsList';
 import styled from 'styled-components';
 import theme from '../theme/theme';
 import { Card, Tag, Progress } from 'antd';
@@ -30,7 +30,7 @@ export const StyledCard = styled(Card)<CardProps>`
   margin-right: auto;
   width: ${(props) => `${props.width}px`};
   @media (max-width: 500px) {
-    width: 350px;
+    width: ${theme.$mobileWidth}px;
   }
 `;
 
@@ -65,33 +65,36 @@ const Projects = ({ width, proNum, showButton }: ProjectSProps) => {
       <Fade top>
         <div className='title'>Projects</div>
       </Fade>
-      {projectsList.slice(0, proNum).map((item: Project, index: number) => {
-        return (
-          <Fade bottom>
-            <StyledCard
-              title={item.title}
-              extra={<a href={item.link}>More</a>}
-              width={width}
-              key={index}
-            >
-              <p>{item.intro}</p>
-              <p>{item.status}</p>
-              <p>
-                <Progress percent={item.percent} />
-              </p>
-              <p>
-                {item.tags.map((tag: tag, index: number) => {
-                  return (
-                    <Tag color={tag.color} key={index}>
-                      {tag.name}
-                    </Tag>
-                  );
-                })}
-              </p>
-            </StyledCard>
-          </Fade>
-        );
-      })}
+      {projectsList
+        .reverse()
+        .slice(0, proNum)
+        .map((item, index: number) => {
+          return (
+            <Fade bottom>
+              <StyledCard
+                title={item.title}
+                extra={<a href={item.link}>More</a>}
+                width={width}
+                key={index}
+              >
+                <p>{item.intro}</p>
+                <p>{item.status}</p>
+                <p>
+                  <Progress percent={item.percent} />
+                </p>
+                <p>
+                  {item.tags.map((tag, index: number) => {
+                    return (
+                      <Tag color={tag.color} key={index}>
+                        {tag.name}
+                      </Tag>
+                    );
+                  })}
+                </p>
+              </StyledCard>
+            </Fade>
+          );
+        })}
       <Fade top>
         <StyledButton
           className='button'

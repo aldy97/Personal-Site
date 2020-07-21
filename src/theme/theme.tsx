@@ -13,9 +13,10 @@ const theme: themeProps = {
   $marginSection: '40px',
   $marginPic: '20px',
 
-  //blog's width on pc-end and mobile-end
+  //width on pc-end and mobile-end
   $blogWidth: 800,
   $mobileWidth: 350,
+  $projectWidth: 600,
 
   //colors
   $footerBorderColor: 'rgb(3, 37, 108)',
