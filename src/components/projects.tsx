@@ -11,6 +11,7 @@ export const StyledProjects = styled.div`
     color: ${theme.$themeColor};
     font-size: ${theme.$titleSize};
     text-align: center;
+    margin-bottom: -20px;
   }
   .button {
     margin-left: auto;

@@ -6,7 +6,7 @@ import ImgHolder from '../../components/ImgHolder';
 const content = [
   <SubTitle>1. Static Layout</SubTitle>,
   <ImgHolder>
-    <img src={require('../../static/LayOutPic/static.png')} />
+    <img alt='' src={require('../../static/LayOutPic/static.png')} />
   </ImgHolder>,
   <p>
     A static page layout (sometimes called a “fixed” layout or “fixed width”
@@ -35,7 +35,7 @@ const content = [
   </p>,
   <SubTitle>2. Liquid Page Layout</SubTitle>,
   <ImgHolder>
-    <img src={require('../../static/LayOutPic/liquid.png')} />
+    <img alt='' src={require('../../static/LayOutPic/liquid.png')} />
   </ImgHolder>,
   <p>
     A liquid page layout (sometimes called “fluid” or “fluid width”) uses
@@ -54,7 +54,7 @@ const content = [
   </p>,
   <SubTitle>3. Adaptive Page Layout</SubTitle>,
   <ImgHolder>
-    <img src={require('../../static/LayOutPic/adaptive.png')} />
+    <img alt='' src={require('../../static/LayOutPic/adaptive.png')} />
   </ImgHolder>,
   <p>
     An adaptive page layout uses CSS media queries to detect the width of the
@@ -82,7 +82,7 @@ const content = [
   </p>,
   <SubTitle>4. Responsive Page Layout</SubTitle>,
   <ImgHolder>
-    <img src={require('../../static/LayOutPic/responsive.png')} />
+    <img alt='' src={require('../../static/LayOutPic/responsive.png')} />
   </ImgHolder>,
   <p>
     A responsive page layout uses both relative units and media queries,
