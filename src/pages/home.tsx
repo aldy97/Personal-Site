@@ -23,6 +23,7 @@ const Home: React.FC = () => {
         width={theme.$blogWidth as number}
         blogNum={blogNum}
         showButton={true}
+        showFilter={false}
       />
     </div>
   );

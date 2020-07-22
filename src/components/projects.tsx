@@ -10,9 +10,9 @@ export const StyledProjects = styled.div`
   .title {
     color: ${theme.$themeColor};
     font-size: ${theme.$titleSize};
-    text-align: center;
-    margin-bottom: -20px;
+    margin-bottom: 0;
   }
+  text-align: center;
   .button {
     margin-left: auto;
     margin-right: auto;

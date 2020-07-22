@@ -53,8 +53,8 @@ type blogLayoutProps = {
 
 //Abstracted for generating single blog page
 const BlogLayout = ({ index, content, height }: blogLayoutProps) => {
-  const thisBlog = blogList[index];
-  const date = thisBlog.time.format('YYYY - MM - DD');
+  const blog = blogList[index];
+  const date = blog.time.format('YYYY - MM - DD');
 
   //Ratio between blog width on PC and mobile to calculate the banner height on mobile-end
   const ratio = (theme.$mobileWidth as number) / (theme.$blogWidth as number);
@@ -62,15 +62,15 @@ const BlogLayout = ({ index, content, height }: blogLayoutProps) => {
 
   return (
     <StyledBlog>
-      <StyledTitle>{thisBlog.title}</StyledTitle>
+      <StyledTitle>{blog.title}</StyledTitle>
       <PublishedTime>Published on {date}</PublishedTime>
       <ImgHolder
         height={height}
         mobileHeight={mobileHeight}
-        src={thisBlog.pic}
+        src={blog.pic}
       ></ImgHolder>
       {content}
-      <Category tagList={thisBlog.tags}></Category>
+      <Category tagList={blog.tags}></Category>
       <PrevNextCard index={index} />
     </StyledBlog>
   );

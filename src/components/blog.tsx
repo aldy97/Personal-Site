@@ -1,5 +1,6 @@
 import React from 'react';
 import blogList from './blogList';
+import Filter from './Filter';
 import { StyledProjects, StyledButton } from './projects';
 import { Card, Tag } from 'antd';
 import styled from 'styled-components';
@@ -33,14 +34,17 @@ const { Meta } = Card;
 type BlogProps = {
   width: number;
   blogNum: number;
+  showFilter: boolean;
   showButton: boolean;
 };
-const Blog = ({ width, blogNum, showButton }: BlogProps) => {
+
+const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
   return (
     <StyledBlog>
       <Fade top>
         <div className='title'>Blog</div>
       </Fade>
+      {showFilter ? <Filter></Filter> : <div></div>}
       {blogList
         .reverse()
         .slice(0, blogNum)
