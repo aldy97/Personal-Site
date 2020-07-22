@@ -17,6 +17,7 @@ const Home: React.FC = () => {
         width={theme.$projectWidth as number}
         proNum={projectNum}
         showButton={true}
+        showFilter={false}
       />
       <Divider />
       <Blog

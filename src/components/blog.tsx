@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import blogList from './blogList';
 import Filter from './Filter';
 import { StyledProjects, StyledButton } from './projects';
+import { tag } from './projectsList';
 import { Card, Tag } from 'antd';
 import styled from 'styled-components';
 import theme from '../theme/theme';
@@ -38,15 +39,44 @@ type BlogProps = {
   showButton: boolean;
 };
 
+const options: string[] = [
+  'All',
+  'JavaScript',
+  'TypeScript',
+  'UI/UX',
+  'CSS',
+  'React',
+];
+
 const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
+  const [categorySelected, setCategorySelected] = useState('All');
+
+  const handleChange = (value: string) => {
+    setCategorySelected(value);
+  };
+
+  //Determine whether tags contain one that matches category being selected
+  const hasThisCateory = (tags: tag[], tagName: string) => {
+    return tags.map((tag) => tag.name).includes(tagName);
+  };
+
+  const filteredBlogList = blogList.filter((blog) =>
+    hasThisCateory(blog.tags, categorySelected)
+  );
+
   return (
     <StyledBlog>
       <Fade top>
-        <div className='title'>Blog</div>
+        <div className='title' style={{ marginBottom: showFilter ? 20 : 0 }}>
+          Blog
+        </div>
       </Fade>
-      {showFilter ? <Filter></Filter> : <div></div>}
-      {blogList
-        .reverse()
+      {showFilter ? (
+        <Filter handleChange={handleChange} options={options}></Filter>
+      ) : (
+        <div></div>
+      )}
+      {(categorySelected === 'All' ? blogList : filteredBlogList)
         .slice(0, blogNum)
         .map((blog, index: number) => {
           return (

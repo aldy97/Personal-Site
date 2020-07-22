@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import projectsList from './projectsList';
 import styled from 'styled-components';
+import Filter from './Filter';
+import { tag } from './projectsList';
 import theme from '../theme/theme';
 import { Card, Tag, Progress } from 'antd';
 import Fade from 'react-reveal/Fade';
@@ -54,18 +56,51 @@ export const StyledButton = styled.div<ButtonProps>`
   }
 `;
 
+const options: string[] = [
+  'All',
+  'JavaScript',
+  'TypeScript',
+  'React',
+  'Node',
+  'Express',
+];
+
 type ProjectSProps = {
   width: number;
   proNum: number;
   showButton: boolean;
+  showFilter: boolean;
 };
-const Projects = ({ width, proNum, showButton }: ProjectSProps) => {
+
+const Projects = ({ width, proNum, showButton, showFilter }: ProjectSProps) => {
+  const [categorySelected, setCategorySelected] = useState('All');
+
+  const handleChange = (value: string) => {
+    setCategorySelected(value);
+  };
+
+  //Determine whether tags contain one that matches category being selected
+  const hasThisCateory = (tags: tag[], tagName: string) => {
+    return tags.map((tag) => tag.name).includes(tagName);
+  };
+
+  const filteredProjectsList = projectsList.filter((blog) =>
+    hasThisCateory(blog.tags, categorySelected)
+  );
   return (
     <StyledProjects>
       <Fade top>
-        <div className='title'>Projects</div>
+        <div className='title' style={{ marginBottom: showFilter ? 20 : 0 }}>
+          Projects
+        </div>
       </Fade>
-      {projectsList
+      {showFilter ? (
+        <Filter options={options} handleChange={handleChange}></Filter>
+      ) : (
+        <div></div>
+      )}
+
+      {(categorySelected === 'All' ? projectsList : filteredProjectsList)
         .reverse()
         .slice(0, proNum)
         .map((item, index: number) => {
