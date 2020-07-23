@@ -90,7 +90,7 @@ const Projects = ({ width, proNum, showButton, showFilter }: ProjectSProps) => {
   return (
     <StyledProjects>
       <Fade top>
-        <div className='title' style={{ marginBottom: showFilter ? 20 : 0 }}>
+        <div className='title' style={{ marginBottom: showFilter ? 20 : -20 }}>
           Projects
         </div>
       </Fade>

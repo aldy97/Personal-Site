@@ -67,7 +67,7 @@ const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
   return (
     <StyledBlog>
       <Fade top>
-        <div className='title' style={{ marginBottom: showFilter ? 20 : 0 }}>
+        <div className='title' style={{ marginBottom: showFilter ? 20 : -20 }}>
           Blog
         </div>
       </Fade>
@@ -77,6 +77,7 @@ const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
         <div></div>
       )}
       {(categorySelected === 'All' ? blogList : filteredBlogList)
+        .reverse()
         .slice(0, blogNum)
         .map((blog, index: number) => {
           return (

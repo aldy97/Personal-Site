@@ -10,7 +10,7 @@ const ProjectsPage: React.FC = () => {
       width={theme.$blogWidth as number}
       proNum={TotalProNum}
       showButton={false}
-      showFilter={true}
+      showFilter={false}
     ></Project>
   );
 };
