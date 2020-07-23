@@ -5,7 +5,7 @@ export type tag = {
   name: string;
 };
 
-export interface Project {
+export interface project {
   title: string;
   link: string;
   intro: string;
@@ -14,7 +14,7 @@ export interface Project {
   tags: tag[];
 }
 
-const projectsList: Project[] = [
+const projectsList: project[] = [
   {
     title: 'ShangHai MDYL Website🏠',
     link: 'https://github.com/aldy97/MeiDi',

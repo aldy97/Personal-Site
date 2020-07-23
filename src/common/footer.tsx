@@ -8,6 +8,7 @@ const StyledFooter = styled.div`
   line-height: ${theme.$headerHeight};
   text-align: center;
   border-top: 1px solid ${theme.$themeColor};
+  background: #fff;
   a {
     color: ${theme.$themeColor};
     font-size: ${theme.$headerFontSize};
@@ -15,10 +16,6 @@ const StyledFooter = styled.div`
     cursor: pointer;
   }
   @media (max-width: 500px) {
-    position: auto;
-    bottom: 0;
-    background: #fff;
-    z-index: 1;
     width: 100%;
     display: flex;
     a {

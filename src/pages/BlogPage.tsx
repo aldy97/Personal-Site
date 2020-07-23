@@ -3,7 +3,7 @@ import Blog from '../components/blog';
 import blogList from '../components/blogList';
 import styled from 'styled-components';
 
-const minHeight = window.innerHeight - 2.75 * 60;
+const minHeight = window.innerHeight - 2.7 * 60;
 export const PageWrapper = styled.div`
   min-height: ${minHeight}px;
 `;

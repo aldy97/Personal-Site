@@ -1,30 +1,14 @@
 import React, { useState } from 'react';
 import blogList from './blogList';
 import Filter from './Filter';
-import { StyledProjects, StyledButton } from './projects';
+import { StyledProjects, StyledButton, StyledCard } from './projects';
 import { tag } from './projectsList';
 import { Card, Tag } from 'antd';
 import styled from 'styled-components';
-import theme from '../theme/theme';
 import Fade from 'react-reveal/Fade';
 import 'antd/dist/antd.css';
 
 const StyledBlog = styled(StyledProjects)``;
-
-type CardProps = {
-  width: number;
-};
-const StyledCard = styled(Card)<CardProps>`
-  margin-top: ${theme.$marginSection};
-  margin-bottom: ${theme.$marginSection};
-  margin-left: auto;
-  margin-right: auto;
-  cursor: pointer;
-  width: ${(props) => `${props.width}px`};
-  @media (max-width: 500px) {
-    width: ${theme.$mobileWidth}px;
-  }
-`;
 
 const StyledTag = styled(Tag)`
   margin-top: 12px;
@@ -38,15 +22,6 @@ type BlogProps = {
   showFilter: boolean;
   showButton: boolean;
 };
-
-const options: string[] = [
-  'All',
-  'JavaScript',
-  'TypeScript',
-  'UI/UX',
-  'CSS',
-  'React',
-];
 
 const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
   const [categorySelected, setCategorySelected] = useState('All');
@@ -73,7 +48,7 @@ const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
       </Fade>
       {showFilter ? (
         <div className='filter-wrapper'>
-          <Filter handleChange={handleChange} options={options}></Filter>
+          <Filter handleChange={handleChange} type='blog'></Filter>
         </div>
       ) : (
         <div></div>

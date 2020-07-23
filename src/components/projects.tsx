@@ -62,15 +62,6 @@ export const StyledButton = styled.div<ButtonProps>`
   }
 `;
 
-const options: string[] = [
-  'All',
-  'JavaScript',
-  'TypeScript',
-  'React',
-  'Node',
-  'Express',
-];
-
 type ProjectSProps = {
   width: number;
   proNum: number;
@@ -102,7 +93,7 @@ const Projects = ({ width, proNum, showButton, showFilter }: ProjectSProps) => {
       </Fade>
       {showFilter ? (
         <div className='filter-wrapper'>
-          <Filter options={options} handleChange={handleChange}></Filter>
+          <Filter handleChange={handleChange} type='projects'></Filter>
         </div>
       ) : (
         <div></div>
