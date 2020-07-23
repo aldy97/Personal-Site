@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Header from './common/header';
 import Footer from './common/footer';
 import Home from './pages/home';
@@ -11,16 +11,6 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import DataRender from './pages/blog/DataRender';
 
 function App() {
-  //  when filter applied on blog/projects page,
-  //       number of items is not fixed.
-  //       when we only have one project Or post being shown,
-  //       footer position needs to be absolute in mobile-end,
-  //       thus it is not floating
-  const [isAbsolute, setIsAbsolute] = useState(true);
-  useEffect(() => {
-    console.log(isAbsolute);
-  });
-
   return (
     <div>
       <Header />
@@ -33,7 +23,7 @@ function App() {
         <Route path='/blog/2' exact component={DataRender}></Route>
         <Route path='/blog/3' exact component={ResLay}></Route>
       </BrowserRouter>
-      <Footer Absolute={isAbsolute} />
+      <Footer />
     </div>
   );
 }

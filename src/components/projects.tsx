@@ -23,7 +23,7 @@ export const StyledProjects = styled.div`
     margin-right: auto;
   }
   @media (max-width: 500px) {
-    margin-bottom: 100px;
+    margin-bottom: 0px;
   }
 `;
 
