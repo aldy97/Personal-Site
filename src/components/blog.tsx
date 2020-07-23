@@ -72,7 +72,9 @@ const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
         </div>
       </Fade>
       {showFilter ? (
-        <Filter handleChange={handleChange} options={options}></Filter>
+        <div className='filter-wrapper'>
+          <Filter handleChange={handleChange} options={options}></Filter>
+        </div>
       ) : (
         <div></div>
       )}

@@ -48,7 +48,10 @@ const blogList: blog[] = [
     desc:
       'Making layout be adaptive to all screen size is important and critical',
     pic: require('../static/LayoutSolution.jpg'),
-    tags: [{ color: theme.$reactBlue as string, name: 'CSS' }],
+    tags: [
+      { color: theme.$reactBlue as string, name: 'CSS' },
+      { color: theme.$tsBlue as string, name: 'UI/UX' },
+    ],
     href: '/blog/3',
   },
 ];

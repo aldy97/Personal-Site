@@ -38,7 +38,6 @@ const projectsList: Project[] = [
       { color: theme.$tsBlue as string, name: 'TypeScript' },
       { color: theme.$nodeGreen as string, name: 'Node' },
       { color: theme.$expressGreen as string, name: 'Express' },
-      { color: theme.$jsYellow as string, name: 'JavaScript' },
     ],
   },
   {

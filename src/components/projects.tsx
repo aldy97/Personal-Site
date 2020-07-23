@@ -13,11 +13,17 @@ export const StyledProjects = styled.div`
     color: ${theme.$themeColor};
     font-size: ${theme.$titleSize};
     margin-bottom: 0;
+    text-align: center;
   }
-  text-align: center;
+  .filter-wrapper {
+    text-align: center;
+  }
   .button {
     margin-left: auto;
     margin-right: auto;
+  }
+  @media (max-width: 500px) {
+    margin-bottom: 100px;
   }
 `;
 
@@ -95,7 +101,9 @@ const Projects = ({ width, proNum, showButton, showFilter }: ProjectSProps) => {
         </div>
       </Fade>
       {showFilter ? (
-        <Filter options={options} handleChange={handleChange}></Filter>
+        <div className='filter-wrapper'>
+          <Filter options={options} handleChange={handleChange}></Filter>
+        </div>
       ) : (
         <div></div>
       )}

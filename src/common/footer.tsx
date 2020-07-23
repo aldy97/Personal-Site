@@ -2,7 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import theme from '../theme/theme';
 
-const StyledFooter = styled.div`
+type FooterProps = {
+  Absolute: boolean;
+};
+
+const StyledFooter = styled.div<FooterProps>`
   margin-top: ${theme.$marginSection};
   height: ${theme.$headerHeight};
   line-height: ${theme.$headerHeight};
@@ -15,6 +19,10 @@ const StyledFooter = styled.div`
     cursor: pointer;
   }
   @media (max-width: 500px) {
+    position: ${(props) => (props.Absolute ? 'absolute' : 'auto')};
+    bottom: 0;
+    background: #fff;
+    z-index: 1;
     width: 100%;
     display: flex;
     a {
@@ -25,9 +33,9 @@ const StyledFooter = styled.div`
   }
 `;
 
-const Footer: React.FC = () => {
+const Footer = ({ Absolute }: FooterProps) => {
   return (
-    <StyledFooter>
+    <StyledFooter Absolute={Absolute}>
       <a href='https://github.com/aldy97'>Github</a>
       <a href='https://www.linkedin.com/in/feng-xiong-ba3a76166/'>Linkedin</a>
       <a href='mailto:fengxiong34@gmail.com'>Email</a>
