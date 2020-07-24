@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import MobileHeader from './MobileHeader';
 import styled from 'styled-components';
 import theme from '../theme/theme';
@@ -52,10 +52,15 @@ const StyledHeader = styled.div`
 `;
 
 const Header: React.FC = () => {
-  const width = window.innerWidth;
+  const [width, setWidth] = useState(window.innerWidth);
   useEffect(() => {
-    console.log(width);
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+      console.log('screen width is: ' + width);
+    };
+    window.addEventListener('resize', handleResize);
   });
+
   return width > 1000 ? (
     <StyledHeader>
       <span
@@ -90,7 +95,7 @@ const Header: React.FC = () => {
       </span>
     </StyledHeader>
   ) : (
-    <MobileHeader></MobileHeader>
+    <MobileHeader width={width}></MobileHeader>
   );
 };
 
