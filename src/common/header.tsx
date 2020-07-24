@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import MobileHeader from './MobileHeader';
 import styled from 'styled-components';
 import theme from '../theme/theme';
 
@@ -51,7 +52,11 @@ const StyledHeader = styled.div`
 `;
 
 const Header: React.FC = () => {
-  return (
+  const width = window.innerWidth;
+  useEffect(() => {
+    console.log(width);
+  });
+  return width > 1000 ? (
     <StyledHeader>
       <span
         className='left'
@@ -84,6 +89,8 @@ const Header: React.FC = () => {
         </a>
       </span>
     </StyledHeader>
+  ) : (
+    <MobileHeader></MobileHeader>
   );
 };
 
