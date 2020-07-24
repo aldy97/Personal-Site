@@ -3,7 +3,7 @@ type themeProps = {
 };
 
 const theme: themeProps = {
-  $headerHeight: '60px',
+  $headerHeight: '50px',
   $headerWidth: '1200px',
   $headerFontSize: '18px',
   $publishTimeFontSize: '16px',
