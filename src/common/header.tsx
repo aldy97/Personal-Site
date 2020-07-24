@@ -26,32 +26,12 @@ const StyledHeader = styled.div`
       color: ${theme.$themeColor};
     }
   }
-  @media (max-width: 500px) {
-    width: 300px;
-    line-height: 40px;
-    .left {
-      display: block;
-      text-align: center;
-    }
-    .right {
-      width: 300px;
-      display: flex;
-      span {
-        flex: 1;
-        margin-left: 0;
-        margin-right: 0;
-        text-align: center;
-      }
-      a {
-        flex: 1;
-        margin-left: 0;
-        text-align: center;
-      }
-    }
+  @media (max-width: 1200px) {
+    width: 800px;
   }
 `;
 
-const Header: React.FC = () => {
+const Header = () => {
   const [width, setWidth] = useState(window.innerWidth);
   useEffect(() => {
     const handleResize = () => {

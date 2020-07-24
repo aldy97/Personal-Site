@@ -24,9 +24,12 @@ const StyledIntro = styled.div`
       color: ${theme.$jsYellow};
     }
   }
-  @media (max-width: 500px) {
-    width: 300px;
-    font-size: 28px;
+  @media (max-width: 1200px) {
+    width: 800px;
+  }
+  @media (max-width: 1000px) {
+    width: 350px;
+    font-size: 2rem;
     div {
       text-align: center;
     }

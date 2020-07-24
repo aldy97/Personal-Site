@@ -37,6 +37,9 @@ export const StyledCard = styled(Card)<CardProps>`
   margin-left: auto;
   margin-right: auto;
   width: ${(props) => `${props.width}px`};
+  @media (max-width: 1000px) {
+    width: 600px;
+  }
   @media (max-width: 500px) {
     width: ${theme.$mobileWidth}px;
   }
