@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import blogList from './blogList';
 import Filter from './Filter';
 import { StyledButton, StyledCard } from './projects';
@@ -7,6 +7,8 @@ import { Card, Tag } from 'antd';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 import theme from '../theme/theme';
+import useInnerHeight from '../hooks/useInnerHeight';
+import useFilter from '../hooks/useFilter';
 import 'antd/dist/antd.css';
 
 const StyledTag = styled(Tag)`
@@ -38,14 +40,7 @@ const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
     hasThisCateory(blog.tags, categorySelected)
   );
 
-  const [height, setHeight] = useState(window.innerHeight);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setHeight(window.innerHeight);
-    };
-    window.addEventListener('resize', handleResize);
-  }, [height]);
+  const height = useInnerHeight();
 
   const minHeight = height - 2.3 * 60;
 

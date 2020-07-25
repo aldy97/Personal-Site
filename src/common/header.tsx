@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import MobileHeader from './MobileHeader';
 import styled from 'styled-components';
+import useInnerWidth from '../hooks/useInnerWidth';
 import theme from '../theme/theme';
 
 const StyledHeader = styled.div`
@@ -32,15 +33,7 @@ const StyledHeader = styled.div`
 `;
 
 const Header = () => {
-  const [width, setWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-      console.log('screen width is: ' + width);
-    };
-    window.addEventListener('resize', handleResize);
-  }, [width]);
+  const width = useInnerWidth();
 
   return width > 1000 ? (
     <StyledHeader>

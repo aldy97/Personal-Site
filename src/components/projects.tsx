@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import projectsList from './projectsList';
 import styled from 'styled-components';
 import Filter from './Filter';
@@ -6,6 +6,7 @@ import { tag } from './projectsList';
 import theme from '../theme/theme';
 import { Card, Tag, Progress } from 'antd';
 import Fade from 'react-reveal/Fade';
+import useInnerHeight from '../hooks/useInnerHeight';
 import 'antd/dist/antd.css';
 
 type CardProps = {
@@ -65,18 +66,11 @@ const Projects = ({ width, proNum, showButton, showFilter }: ProjectSProps) => {
     return tags.map((tag) => tag.name).includes(tagName);
   };
 
-  const filteredProjectsList = projectsList.filter((blog) =>
-    hasThisCateory(blog.tags, categorySelected)
+  const filteredProjectsList = projectsList.filter((project) =>
+    hasThisCateory(project.tags, categorySelected)
   );
 
-  const [height, setHeight] = useState(window.innerHeight);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setHeight(window.innerHeight);
-    };
-    window.addEventListener('resize', handleResize);
-  }, [height]);
+  const height = useInnerHeight();
 
   const minHeight = height - 2.3 * 60;
 
