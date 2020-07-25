@@ -54,6 +54,17 @@ const projectsList: project[] = [
       { color: theme.$tsBlue as string, name: 'TypeScript' },
     ],
   },
+  {
+    title: 'My Personal Website👤',
+    link: 'https://github.com/aldy97/Personal-Site',
+    intro: 'My personal website written in TypeScipt',
+    status: 'Consistently updating my blog',
+    percent: 100,
+    tags: [
+      { color: theme.$reactBlue as string, name: 'React' },
+      { color: theme.$tsBlue as string, name: 'TypeScript' },
+    ],
+  },
 ];
 
 export default projectsList;

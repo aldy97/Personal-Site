@@ -1,4 +1,5 @@
-import projectsList, { tag } from '../components/projectsList';
+import projectsList, { tag, project } from '../components/projectsList';
+import { blog } from '../components/blogList';
 import blogList from '../components/blogList';
 
 //Determine whether tags contain one that matches category being selected
@@ -6,7 +7,10 @@ const hasThisCateory = (tags: tag[], tagName: string) => {
   return tags.map((tag) => tag.name).includes(tagName);
 };
 
-export default function useFilter(type: string, category: string) {
+const useFilter: (type: string, category: string) => blog[] | project[] = (
+  type: string,
+  category: string
+) => {
   if (category === 'All') {
     return type === 'projects' ? projectsList : blogList;
   } else {
@@ -22,4 +26,6 @@ export default function useFilter(type: string, category: string) {
       return filteredList;
     }
   }
-}
+};
+
+export default useFilter;

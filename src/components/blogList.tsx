@@ -54,6 +54,18 @@ const blogList: blog[] = [
     ],
     href: '/blog/3',
   },
+  {
+    title: 'My Practice on Custom Hook',
+    time: dayjs('2020-07-24'),
+    desc: 'Costom hook greatly helps me reduce code repeatability',
+    pic: require('../static/customHook.jpeg'),
+    tags: [
+      { color: theme.$reactBlue as string, name: 'React' },
+      { color: theme.$reactBlue as string, name: 'CSS' },
+      { color: theme.$tsBlue as string, name: 'TypeScript' },
+    ],
+    href: '/blog/4',
+  },
 ];
 
 export default blogList;
