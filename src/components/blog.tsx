@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import blogList from './blogList';
+import useFilter from '../hooks/useFilter';
+import { blog } from './blogList';
 import Filter from './Filter';
 import { StyledButton, StyledCard } from './projects';
-import { tag } from './projectsList';
 import { Card, Tag } from 'antd';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 import theme from '../theme/theme';
 import useInnerHeight from '../hooks/useInnerHeight';
-import useFilter from '../hooks/useFilter';
 import 'antd/dist/antd.css';
 
 const StyledTag = styled(Tag)`
@@ -31,14 +30,7 @@ const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
     setCategorySelected(value);
   };
 
-  //Determine whether tags contain one that matches category being selected
-  const hasThisCateory = (tags: tag[], tagName: string) => {
-    return tags.map((tag) => tag.name).includes(tagName);
-  };
-
-  const filteredBlogList = blogList.filter((blog) =>
-    hasThisCateory(blog.tags, categorySelected)
-  );
+  const filteredList = useFilter('blog', categorySelected) as blog[];
 
   const height = useInnerHeight();
 
@@ -78,7 +70,7 @@ const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
       ) : (
         <div></div>
       )}
-      {(categorySelected === 'All' ? blogList : filteredBlogList)
+      {filteredList
         .reverse()
         .slice(0, blogNum)
         .map((blog, index: number) => {

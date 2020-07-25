@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import MobileHeader from './MobileHeader';
 import styled from 'styled-components';
 import useInnerWidth from '../hooks/useInnerWidth';

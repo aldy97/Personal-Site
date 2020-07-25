@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import projectsList from './projectsList';
+import { project } from './projectsList';
 import styled from 'styled-components';
 import Filter from './Filter';
-import { tag } from './projectsList';
 import theme from '../theme/theme';
 import { Card, Tag, Progress } from 'antd';
 import Fade from 'react-reveal/Fade';
+import useFilter from '../hooks/useFilter';
 import useInnerHeight from '../hooks/useInnerHeight';
 import 'antd/dist/antd.css';
 
@@ -61,14 +61,7 @@ const Projects = ({ width, proNum, showButton, showFilter }: ProjectSProps) => {
     setCategorySelected(value);
   };
 
-  //Determine whether tags contain one that matches category being selected
-  const hasThisCateory = (tags: tag[], tagName: string) => {
-    return tags.map((tag) => tag.name).includes(tagName);
-  };
-
-  const filteredProjectsList = projectsList.filter((project) =>
-    hasThisCateory(project.tags, categorySelected)
-  );
+  const filteredList = useFilter('projects', categorySelected) as project[];
 
   const height = useInnerHeight();
 
@@ -108,36 +101,33 @@ const Projects = ({ width, proNum, showButton, showFilter }: ProjectSProps) => {
         <div></div>
       )}
 
-      {(categorySelected === 'All' ? projectsList : filteredProjectsList)
-        .reverse()
-        .slice(0, proNum)
-        .map((item, index: number) => {
-          return (
-            <Fade bottom>
-              <StyledCard
-                title={item.title}
-                extra={<a href={item.link}>More</a>}
-                width={width}
-                key={index}
-              >
-                <p>{item.intro}</p>
-                <p>{item.status}</p>
-                <p>
-                  <Progress percent={item.percent} />
-                </p>
-                <p>
-                  {item.tags.map((tag, index: number) => {
-                    return (
-                      <Tag color={tag.color} key={index}>
-                        {tag.name}
-                      </Tag>
-                    );
-                  })}
-                </p>
-              </StyledCard>
-            </Fade>
-          );
-        })}
+      {filteredList.slice(0, proNum).map((item, index: number) => {
+        return (
+          <Fade bottom>
+            <StyledCard
+              title={item.title}
+              extra={<a href={item.link}>More</a>}
+              width={width}
+              key={index}
+            >
+              <p>{item.intro}</p>
+              <p>{item.status}</p>
+              <p>
+                <Progress percent={item.percent} />
+              </p>
+              <p>
+                {item.tags.map((tag, index: number) => {
+                  return (
+                    <Tag color={tag.color} key={index}>
+                      {tag.name}
+                    </Tag>
+                  );
+                })}
+              </p>
+            </StyledCard>
+          </Fade>
+        );
+      })}
       <Fade top>
         <StyledButton
           className='button'
