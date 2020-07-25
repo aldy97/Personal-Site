@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import projectsList from './projectsList';
 import styled from 'styled-components';
 import Filter from './Filter';
@@ -7,25 +7,6 @@ import theme from '../theme/theme';
 import { Card, Tag, Progress } from 'antd';
 import Fade from 'react-reveal/Fade';
 import 'antd/dist/antd.css';
-
-export const StyledProjects = styled.div`
-  .title {
-    color: ${theme.$themeColor};
-    font-size: ${theme.$titleSize};
-    margin-bottom: 0;
-    text-align: center;
-  }
-  .filter-wrapper {
-    text-align: center;
-  }
-  .button {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  @media (max-width: 500px) {
-    margin-bottom: 0px;
-  }
-`;
 
 type CardProps = {
   width: number;
@@ -40,7 +21,7 @@ export const StyledCard = styled(Card)<CardProps>`
   @media (max-width: 1000px) {
     width: 600px;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     width: ${theme.$mobileWidth}px;
   }
 `;
@@ -87,6 +68,37 @@ const Projects = ({ width, proNum, showButton, showFilter }: ProjectSProps) => {
   const filteredProjectsList = projectsList.filter((blog) =>
     hasThisCateory(blog.tags, categorySelected)
   );
+
+  const [height, setHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setHeight(window.innerHeight);
+    };
+    window.addEventListener('resize', handleResize);
+  }, [height]);
+
+  const minHeight = height - 2.3 * 60;
+
+  const StyledProjects = styled.div`
+    min-height: ${minHeight}px;
+    .title {
+      color: ${theme.$themeColor};
+      font-size: ${theme.$titleSize};
+      margin-bottom: 0;
+      text-align: center;
+    }
+    .filter-wrapper {
+      text-align: center;
+    }
+    .button {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (max-width: 500px) {
+      margin-bottom: 0px;
+    }
+  `;
   return (
     <StyledProjects>
       <Fade top>

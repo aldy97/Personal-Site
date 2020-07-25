@@ -33,13 +33,14 @@ const StyledHeader = styled.div`
 
 const Header = () => {
   const [width, setWidth] = useState(window.innerWidth);
+
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
       console.log('screen width is: ' + width);
     };
     window.addEventListener('resize', handleResize);
-  });
+  }, [width]);
 
   return width > 1000 ? (
     <StyledHeader>

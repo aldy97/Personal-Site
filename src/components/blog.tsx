@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import blogList from './blogList';
 import Filter from './Filter';
-import { StyledProjects, StyledButton, StyledCard } from './projects';
+import { StyledButton, StyledCard } from './projects';
 import { tag } from './projectsList';
 import { Card, Tag } from 'antd';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
+import theme from '../theme/theme';
 import 'antd/dist/antd.css';
-
-const StyledBlog = styled(StyledProjects)``;
 
 const StyledTag = styled(Tag)`
   margin-top: 12px;
@@ -38,6 +37,37 @@ const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
   const filteredBlogList = blogList.filter((blog) =>
     hasThisCateory(blog.tags, categorySelected)
   );
+
+  const [height, setHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setHeight(window.innerHeight);
+    };
+    window.addEventListener('resize', handleResize);
+  }, [height]);
+
+  const minHeight = height - 2.3 * 60;
+
+  const StyledBlog = styled.div`
+    min-height: ${minHeight}px;
+    .title {
+      color: ${theme.$themeColor};
+      font-size: ${theme.$titleSize};
+      margin-bottom: 0;
+      text-align: center;
+    }
+    .filter-wrapper {
+      text-align: center;
+    }
+    .button {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (max-width: 500px) {
+      margin-bottom: 0px;
+    }
+  `;
 
   return (
     <StyledBlog>
