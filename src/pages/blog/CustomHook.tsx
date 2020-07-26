@@ -55,16 +55,20 @@ const content = [
   </p>,
   <SubTitle>My Solution to this issue</SubTitle>,
   <p>You probably have got to know what my solution is: custom hook.</p>,
-  <ImgHolder src={require('../../static/CustomHook/2.png')}></ImgHolder>,
+  <ImgHolder
+    src={require('../../static/CustomHook/2.png')}
+    mobileHeight={250}
+  ></ImgHolder>,
   <p>
     If you have little knowledge in{' '}
     <a href='https://zh-hans.reactjs.org/docs/hooks-overview.html'>
       basic React hook usage
     </a>
-    , you should take like 5 min to get to know about it. I have also written
-    one blog <a href='/blog/1'>Hook Overview</a> about why React Hooks are worth
-    using . Briefly, this custom hook keeps track on browser's inner height and
-    update it to components that use it once browser inner height changes.
+    , you should take like 5 minutes to get to know about it. I have also
+    written one blog <a href='/blog/1'>Hook Overview</a> about why React Hooks
+    are worth using . Briefly, this custom hook keeps track on browser's inner
+    height and update it to components that use it once browser inner height
+    changes.
   </p>,
   <p>
     The last step is implementation of the custom hook in my blog and projects
@@ -72,21 +76,20 @@ const content = [
   </p>,
   <ImgHolder
     src={require('../../static/CustomHook/3')}
-    mobileHeight={450}
+    mobileHeight={400}
   ></ImgHolder>,
   <p>
     Great thanks to styled-components, implementation of dynamic CSS has become
-    super easy and chill. (Please ignore my magic numbers, I actually prefer
-    calling them hyper-parameters.) Now, let us see how it look like now:
+    super easy and chill. Now, let us see how it look like now:
   </p>,
   <ImgHolder src={require('../../static/CustomHook/4')}></ImgHolder>,
   <p>
-    Yayy! It works! The static image is not able to prove how it corresponds to
-    change of browser's inner height, but you can play around with it yourself
-    on my site. This feature also works on mobile-end too! The implementation of
-    useInnerHeight in blog component is similar to the one above. If I do not
-    use custom Hook, I would have copy and paste code to blog component, which
-    is low in maintainability and mistake-prone.
+    Yayy! It works! The static image is not able to demonstrate how it
+    corresponds to change of browser's inner height, but you can play around
+    with it yourself on my site. This feature also works on mobile-end too! The
+    implementation of useInnerHeight in blog component is similar to the one
+    above. If I do not use custom Hook, I would have copy and paste code to blog
+    component, which is low in maintainability and mistake-prone.
   </p>,
   <p>
     Hopefully this blog gives you a little taste of Custom Hooks. This is just a

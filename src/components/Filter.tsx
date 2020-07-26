@@ -1,10 +1,10 @@
 import React from 'react';
 import blogList from './blogList';
 import projectsList from './projectsList';
-import { Select } from 'antd';
+import { Menu, Dropdown } from 'antd';
+import styled from 'styled-components';
+import theme from '../theme/theme';
 import 'antd/dist/antd.css';
-
-const { Option } = Select;
 
 //Generates all non-duplicate category options from blogList/projectList
 const getOptions: (list: string[][]) => string[] = (list: string[][]) => {
@@ -19,11 +19,22 @@ const getOptions: (list: string[][]) => string[] = (list: string[][]) => {
   return options;
 };
 
+const StyledA = styled.div`
+  color: ${theme.$themeColor};
+  border: 2px solid #eee;
+  border-radius: 6px;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+`;
+
 type FilterProps = {
-  handleChange: (value: string) => void;
+  handleClick: (key: any) => void;
   type: string;
 };
-const Filter = ({ handleChange, type }: FilterProps) => {
+const Filter = ({ handleClick, type }: FilterProps) => {
   //generates a 2-D array that contains duplicated tags from blogList
   const unprocessedBlogListOptions = blogList.map((blog) =>
     blog.tags.map((tag) => tag.name)
@@ -39,16 +50,23 @@ const Filter = ({ handleChange, type }: FilterProps) => {
       ? getOptions(unprocessedBlogListOptions)
       : getOptions(unprocessedProjectsListOptions);
 
-  return (
-    <Select
-      style={{ width: 200, textAlign: 'center' }}
-      onChange={handleChange}
-      defaultValue='Filter By Category'
-    >
+  const menu = (
+    <Menu onClick={handleClick}>
       {options.map((option) => {
-        return <Option value={option}>{option}</Option>;
+        return <Menu.Item key={option}>{option}</Menu.Item>;
       })}
-    </Select>
+    </Menu>
+  );
+
+  return (
+    <Dropdown overlay={menu}>
+      <StyledA
+        className='ant-dropdown-link'
+        onClick={(e) => e.preventDefault()}
+      >
+        Filter by Category
+      </StyledA>
+    </Dropdown>
   );
 };
 

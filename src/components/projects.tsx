@@ -57,8 +57,8 @@ type ProjectSProps = {
 const Projects = ({ width, proNum, showButton, showFilter }: ProjectSProps) => {
   const [categorySelected, setCategorySelected] = useState('All');
 
-  const handleChange = (value: string) => {
-    setCategorySelected(value);
+  const handleClick = (key: any) => {
+    setCategorySelected(key.key);
   };
 
   const filteredList = useFilter('projects', categorySelected) as project[];
@@ -95,7 +95,7 @@ const Projects = ({ width, proNum, showButton, showFilter }: ProjectSProps) => {
       </Fade>
       {showFilter ? (
         <div className='filter-wrapper'>
-          <Filter handleChange={handleChange} type='projects'></Filter>
+          <Filter handleClick={handleClick} type='projects'></Filter>
         </div>
       ) : (
         <div></div>

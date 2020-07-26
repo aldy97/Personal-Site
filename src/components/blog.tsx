@@ -26,8 +26,8 @@ type BlogProps = {
 const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
   const [categorySelected, setCategorySelected] = useState('All');
 
-  const handleChange = (value: string) => {
-    setCategorySelected(value);
+  const handleClick = (key: any) => {
+    setCategorySelected(key.key);
   };
 
   const filteredList = useFilter('blog', categorySelected) as blog[];
@@ -65,7 +65,7 @@ const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
       </Fade>
       {showFilter ? (
         <div className='filter-wrapper'>
-          <Filter handleChange={handleChange} type='blog'></Filter>
+          <Filter handleClick={handleClick} type='blog'></Filter>
         </div>
       ) : (
         <div></div>
