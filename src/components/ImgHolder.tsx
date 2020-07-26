@@ -6,6 +6,7 @@ type ImgHolderProps = {
   width?: number;
   height?: number;
   mobileHeight?: number;
+  padHeight?: number;
   src: any;
 };
 
@@ -19,6 +20,14 @@ const StyledImgHolder = styled.div<ImgHolderProps>`
     width: ${(props) =>
       props.width ? `${props.width}px` : `${theme.$blogWidth}px`};
     height: ${(props) => (props.height ? `${props.height}px` : '')};
+  }
+  @media (max-width: 800px) {
+    width: ${theme.$padWidth}px;
+    height: ${(props) => props.padHeight};
+    img {
+      width: ${theme.$padWidth}px;
+      height: ${(props) => props.padHeight};
+    }
   }
   @media (max-width: 500px) {
     width: ${theme.$mobileWidth}px;

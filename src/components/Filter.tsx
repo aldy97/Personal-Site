@@ -19,7 +19,8 @@ const getOptions: (list: string[][]) => string[] = (list: string[][]) => {
   return options;
 };
 
-const StyledA = styled.div`
+const StyledA = styled.a`
+  display: block;
   color: ${theme.$themeColor};
   border: 2px solid #eee;
   border-radius: 6px;
@@ -28,6 +29,7 @@ const StyledA = styled.div`
   margin-right: auto;
   padding-top: 10px;
   padding-bottom: 10px;
+  cursor: pointer;
 `;
 
 type FilterProps = {
@@ -59,7 +61,7 @@ const Filter = ({ handleClick, type }: FilterProps) => {
   );
 
   return (
-    <Dropdown overlay={menu}>
+    <Dropdown overlay={menu} trigger={['click']}>
       <StyledA
         className='ant-dropdown-link'
         onClick={(e) => e.preventDefault()}

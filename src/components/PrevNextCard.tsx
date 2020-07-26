@@ -20,6 +20,9 @@ const BlogSwitcher = styled.div`
   &: hover {
     border: 1px solid ${theme.$themeColor};
   }
+  @media (max-width: 800px) {
+    width: ${theme.$padWidth}px;
+  }
   @media (max-width: 500px) {
     width: ${theme.$mobileWidth}px;
   }

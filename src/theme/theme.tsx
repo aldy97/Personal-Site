@@ -16,6 +16,7 @@ const theme: themeProps = {
   //width on pc-end and mobile-end
   $blogWidth: 800,
   $mobileWidth: 350,
+  $padWidth: 600,
   $projectWidth: 600,
 
   //colors

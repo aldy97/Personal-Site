@@ -16,6 +16,9 @@ const StyledBlog = styled.div`
     font-size: ${theme.$headerFontSize};
     text-align: left;
   }
+  @media (max-width: 800px) {
+    width: ${theme.$padWidth}px;
+  }
   @media (max-width: 500px) {
     width: ${theme.$mobileWidth}px;
     p {
@@ -60,12 +63,16 @@ const BlogLayout = ({ index, content, height }: blogLayoutProps) => {
   const ratio = (theme.$mobileWidth as number) / (theme.$blogWidth as number);
   const mobileHeight = height * ratio;
 
+  const ratioPad = (theme.$padWidth as number) / (theme.$blogWidth as number);
+  const padHeight = height * ratioPad;
+
   return (
     <StyledBlog>
       <StyledTitle>{blog.title}</StyledTitle>
       <PublishedTime>Published on {date}</PublishedTime>
       <ImgHolder
         height={height}
+        padHeight={padHeight}
         mobileHeight={mobileHeight}
         src={blog.pic}
       ></ImgHolder>
