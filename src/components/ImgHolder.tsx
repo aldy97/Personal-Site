@@ -23,10 +23,10 @@ const StyledImgHolder = styled.div<ImgHolderProps>`
   }
   @media (max-width: 800px) {
     width: ${theme.$padWidth}px;
-    height: ${(props) => props.padHeight};
+    height: ${(props) => (props.padHeight ? `${props.padHeight}px` : '')};
     img {
       width: ${theme.$padWidth}px;
-      height: ${(props) => props.padHeight};
+      height: ${(props) => (props.padHeight ? `${props.padHeight}px` : '')};
     }
   }
   @media (max-width: 500px) {
@@ -41,12 +41,19 @@ const StyledImgHolder = styled.div<ImgHolderProps>`
   }
 `;
 
-const ImgHolder = ({ width, height, mobileHeight, src }: ImgHolderProps) => {
+const ImgHolder = ({
+  width,
+  height,
+  mobileHeight,
+  padHeight,
+  src,
+}: ImgHolderProps) => {
   return (
     <StyledImgHolder
       width={width}
       height={height}
       mobileHeight={mobileHeight}
+      padHeight={padHeight}
       src={src}
     >
       <img alt='' src={src}></img>
