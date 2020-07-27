@@ -1,6 +1,7 @@
 import React from 'react';
 import BlogLayout from '../../components/blogLayout';
-import ImgHolder from '../../components/ImgHolder';
+import Highlight from 'react-highlight';
+import 'highlight.js/styles/atom-one-dark.css';
 
 const content = [
   <p>
@@ -41,19 +42,43 @@ const content = [
     </ul>
   </p>,
   <p style={{ marginBottom: 0 }}>Now let's have look at a specific case:</p>,
-  <ImgHolder
-    width={300}
-    height={200}
-    src={require('../../static/TSvsJS/248.png')}
-  ></ImgHolder>,
+  <div style={{ textAlign: 'left' }}>
+    <Highlight className='typescript'>{`
+  export type tag = {
+    color: string;
+    name: string;
+  };
+  `}</Highlight>
+  </div>,
   <p>
     I created a type called 'tag', which contains two fields: both of them are
     of string.
   </p>,
-  <ImgHolder
-    mobileHeight={350}
-    src={require('../../static/TSvsJS/247.png')}
-  ></ImgHolder>,
+  <div style={{ textAlign: 'left' }}>
+    <Highlight className='html'>{` 
+  <StyledCard
+    title={item.title}
+    extra={<a href={item.link}>More</a>}
+    width={width}
+    key={index}
+  >
+    <p>{item.intro}</p>
+    <p>{item.status}</p>
+    <p>
+      <Progress percent={item.percent} />
+    </p>
+    <p>
+      {item.tags.map((tag, index: number) => {
+        return (
+          <Tag color={tag.color} key={index}>
+            {tag.name}
+          </Tag>
+        );
+      })}
+    </p>
+  </StyledCard>
+  `}</Highlight>
+  </div>,
   <p>
     Since I have declared tag as type 'tag', which I have defined previously. VS
     code now can <strong>auto-generate</strong> its corresponding properties.

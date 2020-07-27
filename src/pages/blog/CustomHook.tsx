@@ -2,6 +2,8 @@ import React from 'react';
 import SubTitle from '../../components/SubTitle';
 import BlogLayout from '../../components/blogLayout';
 import ImgHolder from '../../components/ImgHolder';
+import Highlight from 'react-highlight';
+import 'highlight.js/styles/atom-one-dark.css';
 
 const content = [
   <p>
@@ -25,7 +27,8 @@ const content = [
     The footer seems to have an oddly big height, but its actually floating due
     to shortness of the whole page. You would instantly come up with a solution:
     set a min-height for the projects section in the middle. That's exactly what
-    I thought in the first place, after two problems pops up on my brain:
+    I thought in the first place, soon after that three problems pops up on my
+    brain:
   </p>,
   <p>
     <ol>
@@ -55,10 +58,27 @@ const content = [
   </p>,
   <SubTitle>My Solution to this issue</SubTitle>,
   <p>You probably have got to know what my solution is: custom hook.</p>,
-  <ImgHolder
-    src={require('../../static/CustomHook/2.png')}
-    mobileHeight={250}
-  ></ImgHolder>,
+  <div style={{ textAlign: 'left' }}>
+    <Highlight className='typescript'>{`
+  import { useState, useEffect } from 'react';
+
+  //Listener for current innerHeight of browser.
+  function useInnerHeight() {
+    const [height, setHeight] = useState(window.innerHeight);
+  
+    useEffect(() => {
+      const handleResize = () => {
+        setHeight(window.innerHeight);
+      };
+      window.addEventListener('resize', handleResize);
+    }, [height]);
+  
+    return height;
+  }
+  
+  export default useInnerHeight;
+  `}</Highlight>
+  </div>,
   <p>
     If you have little knowledge in{' '}
     <a href='https://zh-hans.reactjs.org/docs/hooks-overview.html'>
@@ -74,13 +94,38 @@ const content = [
     The last step is implementation of the custom hook in my blog and projects
     components:
   </p>,
-  <ImgHolder
-    src={require('../../static/CustomHook/3')}
-    mobileHeight={400}
-  ></ImgHolder>,
+  <div style={{ textAlign: 'left' }}>
+    <Highlight className='typescript'>{`
+  const height = useInnerHeight();
+
+  const minHeight = height - 2.3 * 60;
+
+  const StyledBlog = styled.div\`
+    min-height: \${minHeight}px;
+    .title {
+      color: \${theme.$themeColor};
+      font-size: \${theme.$titleSize};
+      margin-bottom: 0;
+      text-align: center;
+    }
+    .filter-wrapper {
+      text-align: center;
+    }
+    .button {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media (max-width: 500px) {
+      margin-bottom: 0px;
+    }
+  \`;
+`}</Highlight>
+  </div>,
   <p>
-    Great thanks to styled-components, implementation of dynamic CSS has become
-    super easy and chill. Now, let us see how it look like now:
+    Great thanks to{' '}
+    <a href='https://styled-components.com/'>styled-components</a>,
+    implementation of dynamic CSS has become super easy and chill. Now, let us
+    see how it look like now:
   </p>,
   <ImgHolder src={require('../../static/CustomHook/4')}></ImgHolder>,
   <p>
