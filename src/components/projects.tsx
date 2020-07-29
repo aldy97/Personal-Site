@@ -101,33 +101,36 @@ const Projects = ({ width, proNum, showButton, showFilter }: ProjectSProps) => {
         <div></div>
       )}
 
-      {filteredList.slice(0, proNum).map((item, index: number) => {
-        return (
-          <Fade bottom>
-            <StyledCard
-              title={item.title}
-              extra={<a href={item.link}>More</a>}
-              width={width}
-              key={index}
-            >
-              <p>{item.intro}</p>
-              <p>{item.status}</p>
-              <p>
-                <Progress percent={item.percent} />
-              </p>
-              <p>
-                {item.tags.map((tag, index: number) => {
-                  return (
-                    <Tag color={tag.color} key={index}>
-                      {tag.name}
-                    </Tag>
-                  );
-                })}
-              </p>
-            </StyledCard>
-          </Fade>
-        );
-      })}
+      {filteredList
+        .slice(0, proNum)
+        .reverse()
+        .map((item, index: number) => {
+          return (
+            <Fade bottom>
+              <StyledCard
+                title={item.title}
+                extra={<a href={item.link}>More</a>}
+                width={width}
+                key={index}
+              >
+                <p>{item.intro}</p>
+                <p>{item.status}</p>
+                <p>
+                  <Progress percent={item.percent} />
+                </p>
+                <p>
+                  {item.tags.map((tag, index: number) => {
+                    return (
+                      <Tag color={tag.color} key={index}>
+                        {tag.name}
+                      </Tag>
+                    );
+                  })}
+                </p>
+              </StyledCard>
+            </Fade>
+          );
+        })}
       <Fade top>
         <StyledButton
           className='button'

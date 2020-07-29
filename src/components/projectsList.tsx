@@ -58,12 +58,20 @@ const projectsList: project[] = [
     title: 'My Personal Website👤',
     link: 'https://github.com/aldy97/Personal-Site',
     intro: 'My personal website written in TypeScipt',
-    status: 'Consistently updating my blog',
+    status: 'Consistently updating my blog...',
     percent: 100,
     tags: [
       { color: theme.$reactBlue as string, name: 'React' },
       { color: theme.$tsBlue as string, name: 'TypeScript' },
     ],
+  },
+  {
+    title: 'TypeScript-Algorithm🤖️',
+    link: 'https://github.com/aldy97/TypeScript-Algorithm',
+    intro: 'Solving algorithm questions on Leetcode with TypeScript ',
+    status: "Doing questions labeled 'easy'",
+    percent: 30,
+    tags: [{ color: theme.$tsBlue as string, name: 'TypeScript' }],
   },
 ];
 

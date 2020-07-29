@@ -71,8 +71,8 @@ const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
         <div></div>
       )}
       {filteredList
-        .reverse()
         .slice(0, blogNum)
+        .reverse()
         .map((blog, index: number) => {
           return (
             <Fade bottom>
