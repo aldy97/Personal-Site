@@ -22,7 +22,12 @@ const content = [
     the page will be smaller than the inner height of browser. And this
     situation looks like this:
   </p>,
-  <ImgHolder src={require('../../static/CustomHook/1.png')}></ImgHolder>,
+  <ImgHolder
+    src='https://media3.giphy.com/media/cOi20YhImEVOw8Ys4W/giphy.gif'
+    width={200}
+    height={400}
+    mobileHeight={700}
+  ></ImgHolder>,
   <p>
     The footer seems to have an oddly big height, but its actually floating due
     to shortness of the whole page. You would instantly come up with a solution:
@@ -127,14 +132,19 @@ const content = [
     implementation of dynamic CSS has become super easy and chill. Now, let us
     see how it look like now:
   </p>,
-  <ImgHolder src={require('../../static/CustomHook/4')}></ImgHolder>,
+  <ImgHolder
+    src='https://media0.giphy.com/media/TjS2J5AoOpSuWgKY7y/giphy.gif'
+    width={200}
+    height={400}
+    mobileHeight={700}
+  ></ImgHolder>,
   <p>
-    Yayy! It works! The static image is not able to demonstrate how it
-    corresponds to change of browser's inner height, but you can play around
-    with it yourself on my site. This feature also works on mobile-end too! The
-    implementation of useInnerHeight in blog component is similar to the one
-    above. If I do not use custom Hook, I would have copy and paste code to blog
-    component, which is low in maintainability and mistake-prone.
+    Yayy! It works! Now the project page is able to set min-height according to
+    browser inner height when it is first mounted, but also changes min-height
+    as long as browser inner height changes. The implementation of
+    useInnerHeight in blog component is similar to the one above. If I do not
+    use custom Hook, I would have copy and paste code to blog component, which
+    is low in maintainability and mistake-prone.
   </p>,
   <p>
     Hopefully this blog gives you a little taste of Custom Hooks. This is just a

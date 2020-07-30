@@ -11,6 +11,8 @@ type ImgHolderProps = {
 };
 
 const StyledImgHolder = styled.div<ImgHolderProps>`
+  margin-left: auto;
+  margin-right: auto;
   width: ${(props) =>
     props.width ? `${props.width}px` : `${theme.$blogWidth}px`};
   height: ${(props) => (props.height ? `${props.height}px` : '')};
