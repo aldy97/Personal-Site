@@ -8,8 +8,8 @@ import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 import theme from '../theme/theme';
 import useInnerHeight from '../hooks/useInnerHeight';
-import 'antd/dist/antd.css';
 import blogList from './blogList';
+import 'antd/dist/antd.css';
 
 const StyledTag = styled(Tag)`
   margin-top: 12px;

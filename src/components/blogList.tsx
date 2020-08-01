@@ -28,10 +28,7 @@ const blogList: blog[] = [
     time: dayjs('2020-06-04'),
     desc: 'React Hook innovatively enhances functional components',
     pic: require('../static/Hook.png'),
-    tags: [
-      { color: theme.$jsYellow as string, name: 'JavaScript' },
-      { color: theme.$reactBlue as string, name: 'React' },
-    ],
+    tags: [{ color: theme.$reactBlue as string, name: 'React' }],
     href: '/blog/1',
   },
   {

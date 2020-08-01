@@ -13,7 +13,6 @@ import 'antd/dist/antd.css';
 type CardProps = {
   width: number;
 };
-
 export const StyledCard = styled(Card)<CardProps>`
   margin-top: ${theme.$marginSection};
   margin-bottom: ${theme.$marginSection};
