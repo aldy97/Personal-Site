@@ -9,6 +9,7 @@ import Fade from 'react-reveal/Fade';
 import theme from '../theme/theme';
 import useInnerHeight from '../hooks/useInnerHeight';
 import 'antd/dist/antd.css';
+import blogList from './blogList';
 
 const StyledTag = styled(Tag)`
   margin-top: 12px;
@@ -26,8 +27,19 @@ type BlogProps = {
 const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
   const [categorySelected, setCategorySelected] = useState('All');
 
-  const handleClick = (key: any) => {
+  const handleClick = (key: any): void => {
     setCategorySelected(key.key);
+  };
+
+  const getHomeBlogList = (blogNum: number): blog[] => {
+    let HomeBlogList: blog[] = [];
+    for (let i = 0; i <= blogNum + 1; i++) {
+      if (blogList.length !== 0) {
+        HomeBlogList.push(blogList[blogList.length - 1 - i]);
+      }
+      blogNum--;
+    }
+    return HomeBlogList;
   };
 
   const filteredList = useFilter('blog', categorySelected) as blog[];
@@ -70,10 +82,8 @@ const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
       ) : (
         <div></div>
       )}
-      {filteredList
-        .slice(0, blogNum)
-        .reverse()
-        .map((blog, index: number) => {
+      {(showFilter ? filteredList : getHomeBlogList(blogNum)).map(
+        (blog, index: number) => {
           return (
             <Fade bottom>
               <StyledCard
@@ -96,7 +106,8 @@ const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
               </StyledCard>
             </Fade>
           );
-        })}
+        }
+      )}
       <Fade top>
         <StyledButton
           show={showButton}

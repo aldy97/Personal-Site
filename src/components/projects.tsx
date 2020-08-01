@@ -7,6 +7,7 @@ import { Card, Tag, Progress } from 'antd';
 import Fade from 'react-reveal/Fade';
 import useFilter from '../hooks/useFilter';
 import useInnerHeight from '../hooks/useInnerHeight';
+import projectList from './projectsList';
 import 'antd/dist/antd.css';
 
 type CardProps = {
@@ -61,6 +62,17 @@ const Projects = ({ width, proNum, showButton, showFilter }: ProjectSProps) => {
     setCategorySelected(key.key);
   };
 
+  const getHomeProjectList = (proNum: number): project[] => {
+    let HomeProjectList: project[] = [];
+    for (let i = 0; i <= proNum + 1; i++) {
+      if (projectList.length !== 0) {
+        HomeProjectList.push(projectList[projectList.length - 1 - i]);
+      }
+      proNum--;
+    }
+    return HomeProjectList;
+  };
+
   const filteredList = useFilter('projects', categorySelected) as project[];
 
   const height = useInnerHeight();
@@ -101,10 +113,8 @@ const Projects = ({ width, proNum, showButton, showFilter }: ProjectSProps) => {
         <div></div>
       )}
 
-      {filteredList
-        .slice(0, proNum)
-        .reverse()
-        .map((item, index: number) => {
+      {(showFilter ? filteredList : getHomeProjectList(proNum)).map(
+        (item, index: number) => {
           return (
             <Fade bottom>
               <StyledCard
@@ -130,7 +140,8 @@ const Projects = ({ width, proNum, showButton, showFilter }: ProjectSProps) => {
               </StyledCard>
             </Fade>
           );
-        })}
+        }
+      )}
       <Fade top>
         <StyledButton
           className='button'
