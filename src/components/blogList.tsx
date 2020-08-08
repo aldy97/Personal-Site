@@ -70,7 +70,6 @@ const blogList: blog[] = [
     pic: require('../static/HackInstead.jpg'),
     tags: [
       { color: theme.$reactBlue as string, name: 'React' },
-      { color: theme.$reactBlue as string, name: 'CSS' },
       { color: theme.$tsBlue as string, name: 'TypeScript' },
     ],
     href: '/blog/5',

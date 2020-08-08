@@ -1,7 +1,6 @@
 import React from 'react';
 import SubTitle from '../../components/SubTitle';
 import BlogLayout from '../../components/blogLayout';
-import ImgHolder from '../../components/ImgHolder';
 
 const content = [
   <p>
@@ -13,6 +12,18 @@ const content = [
     inspired by <a href='https://www.covid19india.org/'>Covid-19 India</a>,
     which is an ambitious goal! I will be updating this blog consistently as the
     hack goes on.
+  </p>,
+  <SubTitle>Day One</SubTitle>,
+  <p>
+    I had a long conversation with my two group member Chien-yu and Abhinav. We
+    basically talked about which topic to pick for our projects. It was not that
+    sufficient because neither one of them has coding experience. Later on, the
+    other guy, Jagan is back in the discord chat. He is a student from
+    University of Waterloo. We had a decent conversation on API and task
+    assignment and stuff. We were struggling with finding APIs provided by
+    Health Canada initially, and gladly we found a git repo that provides these.
+    Soon after he went to sleep, I started to work on UI components and layout
+    on my own...
   </p>,
 ];
 
