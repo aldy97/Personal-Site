@@ -7,9 +7,10 @@ import ProjectsPage from './pages/ProjectsPage';
 import TSvsJS from './pages/blog/TSvsJS';
 import ReactHooks from './pages/blog/ReactHooks';
 import ResLay from './pages/blog/ResLay';
-import CustomHook from './pages/blog/CustomHook';
-import { BrowserRouter, Route } from 'react-router-dom';
 import DataRender from './pages/blog/DataRender';
+import CustomHook from './pages/blog/CustomHook';
+import HackInstead from './pages/blog/HackInstead';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path='/blog/2' exact component={DataRender}></Route>
         <Route path='/blog/3' exact component={ResLay}></Route>
         <Route path='/blog/4' exact component={CustomHook}></Route>
+        <Route path='/blog/5' exact component={HackInstead}></Route>
       </BrowserRouter>
       <Footer />
     </div>

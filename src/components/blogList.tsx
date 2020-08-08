@@ -63,6 +63,18 @@ const blogList: blog[] = [
     ],
     href: '/blog/4',
   },
+  {
+    title: 'My First Hackathon!',
+    time: dayjs('2020-08-07'),
+    desc: 'Yes, I am going to my first hackathon when I am graduating',
+    pic: require('../static/HackInstead.jpg'),
+    tags: [
+      { color: theme.$reactBlue as string, name: 'React' },
+      { color: theme.$reactBlue as string, name: 'CSS' },
+      { color: theme.$tsBlue as string, name: 'TypeScript' },
+    ],
+    href: '/blog/5',
+  },
 ];
 
 export default blogList;
