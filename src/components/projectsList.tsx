@@ -71,7 +71,18 @@ const projectsList: project[] = [
     intro: 'Solving algorithm questions on Leetcode with TypeScript ',
     status: "Doing questions labeled 'easy'",
     percent: 30,
-    tags: [{ color: theme.$tsBlue as string, name: 'TypeScript' }],
+    tags: [{ color: theme.$tsBlue as string, name: 'Algorithm' }],
+  },
+  {
+    title: 'Covid-19 Canada🦠',
+    link: 'https://github.com/aldy97/TypeScript-Algorithm',
+    intro: 'Visualization of Covid-19 situation in Canada',
+    status: 'Allowing more API from different authorities',
+    percent: 60,
+    tags: [
+      { color: theme.$tsBlue as string, name: 'TypeScript' },
+      { color: theme.$reactBlue as string, name: 'React' },
+    ],
   },
 ];
 

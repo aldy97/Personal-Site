@@ -25,6 +25,30 @@ const content = [
     Soon after he went to sleep, I started to work on UI components and layout
     on my own...
   </p>,
+  <SubTitle>Day Two</SubTitle>,
+  <p>
+    Thing did not go well in the morning when I attempted to implement a map
+    using GeoJSON. So I left this job to Jagan and started to work on API and
+    stuff. The afternoon was productive and I successfully got data from the API
+    provided by John Hopkins University. The conversion of data from JSON to
+    JavaScript was tough, but I made it! With usage of Echarts, the data was
+    finally visualized. Later on, I also came up with another function that
+    allows user not only to choose specific region, but also in how many past
+    days the data is shown. With previous knowledge in using axios, this was not
+    as hard as before.
+  </p>,
+  <SubTitle>Day Three</SubTitle>,
+  <p>
+    I had an argument with Chien on layout and stuff, which I considered as very
+    minor things. I switched my layout from left-right to top-bottom structure.
+    It truly made my content seem to be richer, but it was a crappy work
+    anyways, lol. I wish I could do more during these two days, but it was a
+    good start for a person like me who participated in hackathon for the first
+    time. Next time, I will for sure do better. This is{' '}
+    <a href='http://covid-19-canada.netlify.app'>my link</a> to the project that
+    we finished. I will expand its functionality during my spare time in the
+    future.
+  </p>,
 ];
 
 function HackInstead() {

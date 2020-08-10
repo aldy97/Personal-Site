@@ -54,7 +54,7 @@ const blogList: blog[] = [
   {
     title: 'My Practice on Custom Hook',
     time: dayjs('2020-07-24'),
-    desc: 'Costom hook greatly helps me reduce code repeatability',
+    desc: 'How I use custome to improve adaptability of my CSS layout',
     pic: require('../static/customHook.jpeg'),
     tags: [
       { color: theme.$reactBlue as string, name: 'React' },
@@ -66,7 +66,7 @@ const blogList: blog[] = [
   {
     title: 'My First Hackathon!',
     time: dayjs('2020-08-07'),
-    desc: 'Yes, I am going to my first hackathon when I am graduating',
+    desc: 'Participating in hackathon for the first time ever in my life',
     pic: require('../static/HackInstead.jpg'),
     tags: [
       { color: theme.$reactBlue as string, name: 'React' },
