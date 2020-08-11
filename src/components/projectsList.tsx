@@ -31,7 +31,7 @@ const projectsList: project[] = [
     title: 'My Account Book💰',
     link: 'https://github.com/aldy97/Account_Book',
     intro: 'An app that allows users to record their expense and income',
-    status: 'Working on back-end in order to implement more functions...',
+    status: 'Working on back-end in order to implement more functions',
     percent: 50,
     tags: [
       { color: theme.$reactBlue as string, name: 'React' },
@@ -51,14 +51,13 @@ const projectsList: project[] = [
       { color: theme.$reactBlue as string, name: 'React' },
       { color: theme.$reactBlue as string, name: 'Redux' },
       { color: theme.$jsYellow as string, name: 'JavaScript' },
-      { color: theme.$tsBlue as string, name: 'TypeScript' },
     ],
   },
   {
     title: 'My Personal Website👤',
     link: 'https://github.com/aldy97/Personal-Site',
     intro: 'My personal website written in TypeScipt',
-    status: 'Consistently updating my blog...',
+    status: 'Consistently updating my blog',
     percent: 100,
     tags: [
       { color: theme.$reactBlue as string, name: 'React' },
@@ -69,14 +68,15 @@ const projectsList: project[] = [
     title: 'TypeScript-Algorithm🤖️',
     link: 'https://github.com/aldy97/TypeScript-Algorithm',
     intro: 'Solving algorithm questions on Leetcode with TypeScript ',
-    status: "Doing questions labeled 'easy'",
+    status: "Doing questions labeled easy and medium'",
     percent: 30,
     tags: [{ color: theme.$tsBlue as string, name: 'Algorithm' }],
   },
   {
     title: 'Covid-19 Canada🦠',
     link: 'https://github.com/aldy97/TypeScript-Algorithm',
-    intro: 'Visualization of Covid-19 situation in Canada',
+    intro:
+      'Visualization of Covid-19 situation in Canada, data from John Hopkins API',
     status: 'Allowing more API from different authorities',
     percent: 60,
     tags: [
