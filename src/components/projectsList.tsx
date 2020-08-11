@@ -74,7 +74,7 @@ const projectsList: project[] = [
   },
   {
     title: 'Covid-19 Canada🦠',
-    link: 'https://github.com/aldy97/TypeScript-Algorithm',
+    link: 'https://github.com/aldy97/Covid-19-Canada',
     intro:
       'Visualization of Covid-19 situation in Canada, data from John Hopkins API',
     status: 'Allowing more API from different authorities',

@@ -54,7 +54,7 @@ const blogList: blog[] = [
   {
     title: 'My Practice on Custom Hook',
     time: dayjs('2020-07-24'),
-    desc: 'How I use custome to improve adaptability of my CSS layout',
+    desc: 'How I use custome hook to improve UI performance on mobile end',
     pic: require('../static/customHook.jpeg'),
     tags: [
       { color: theme.$reactBlue as string, name: 'React' },
