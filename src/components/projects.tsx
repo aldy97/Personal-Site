@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { project } from './projectsList';
 import styled from 'styled-components';
 import Filter from './Filter';
-import theme from '../theme/theme';
 import { Card, Tag, Progress } from 'antd';
 import Fade from 'react-reveal/Fade';
 import useFilter from '../hooks/useFilter';
@@ -13,17 +12,21 @@ import 'antd/dist/antd.css';
 type CardProps = {
   width: number;
 };
+
 export const StyledCard = styled(Card)<CardProps>`
-  margin-top: ${theme.$marginSection};
-  margin-bottom: ${theme.$marginSection};
+  color: ${(props) => props.theme.$cardText};
+  margin-top: ${(props) => props.theme.$marginSection};
+  margin-bottom: ${(props) => props.theme.$marginSection};
   margin-left: auto;
   margin-right: auto;
   width: ${(props) => `${props.width}px`};
+  background: ${(props) => props.theme.$cardTheme};
+  border: 1px solid ${(props) => props.theme.$cardBorder};
   @media (max-width: 1000px) {
     width: 600px;
   }
   @media (max-width: 600px) {
-    width: ${theme.$mobileWidth}px;
+    width: ${(props) => props.theme.$mobileWidth}px;
   }
 `;
 
@@ -38,12 +41,12 @@ export const StyledButton = styled.div<ButtonProps>`
   color: #fff;
   cursor: pointer;
   border-radius: 6px;
-  background: ${theme.$themeColor};
+  background: ${(props) => props.theme.$themeColor};
   display: ${(props) => (props.show === false ? 'none' : 'auto')};
   &: hover {
     background: #fff;
-    color: ${theme.$themeColor};
-    border: 1px solid ${theme.$themeColor};
+    color: ${(props) => props.theme.$themeColor};
+    border: 1px solid ${(props) => props.theme.$themeColor};
   }
 `;
 
@@ -81,8 +84,8 @@ const Projects = ({ width, proNum, showButton, showFilter }: ProjectSProps) => {
   const StyledProjects = styled.div`
     min-height: ${minHeight}px;
     .title {
-      color: ${theme.$themeColor};
-      font-size: ${theme.$titleSize};
+      color: ${(props) => props.theme.$themeColor};
+      font-size: ${(props) => props.theme.$titleSize};
       margin-bottom: 0;
       text-align: center;
     }

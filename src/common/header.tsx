@@ -1,17 +1,18 @@
 import React from 'react';
+import { Switch } from 'antd';
 import MobileHeader from './MobileHeader';
 import styled from 'styled-components';
 import useInnerWidth from '../hooks/useInnerWidth';
-import theme from '../theme/theme';
+import 'antd/dist/antd.css';
 
 const StyledHeader = styled.div`
-  height: ${theme.$headerHeight};
-  width: ${theme.$headerWidth};
+  height: ${(props) => props.theme.$headerHeight};
+  width: ${(props) => props.theme.$headerWidth};
   margin-left: auto;
   margin-right: auto;
-  line-height: ${theme.$headerHeight};
-  font-size: ${theme.$headerFontSize};
-  color: ${theme.$themeColor};
+  line-height: ${(props) => props.theme.$headerHeight};
+  font-size: ${(props) => props.theme.$headerFontSize};
+  color: ${(props) => props.theme.$themeColor};
   span {
     cursor: pointer;
   }
@@ -24,7 +25,10 @@ const StyledHeader = styled.div`
     }
     a {
       margin-left: 35px;
-      color: ${theme.$themeColor};
+      color: ${(props) => props.theme.$themeColor};
+    }
+    .switch {
+      margin-left: 35px;
     }
   }
   @media (max-width: 1200px) {
@@ -32,7 +36,12 @@ const StyledHeader = styled.div`
   }
 `;
 
-const Header = () => {
+const StyledSwitch = styled(Switch)``;
+
+type HeaderProps = {
+  toogleDark: any;
+};
+const Header = ({ toogleDark }: HeaderProps) => {
   const width = useInnerWidth();
 
   return width > 1000 ? (
@@ -60,12 +69,10 @@ const Header = () => {
         >
           Projects
         </span>
-        <a
-          style={{ marginRight: 0 }}
-          href='https://drive.google.com/file/d/1JFUcNs16bV5_SvarKwQJ83JEw6JRjYC_/view'
-        >
+        <a href='https://drive.google.com/file/d/1JFUcNs16bV5_SvarKwQJ83JEw6JRjYC_/view'>
           Resume
         </a>
+        <StyledSwitch className='switch' onClick={toogleDark}></StyledSwitch>
       </span>
     </StyledHeader>
   ) : (

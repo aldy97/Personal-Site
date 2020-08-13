@@ -8,10 +8,11 @@ const BlogSwitcher = styled.div`
   margin-top: ${theme.$marginSection};
   padding-top: 15px;
   padding-bottom: 15px;
-  border: 1px solid ${theme.$dividerColor};
+  border: 1px solid ${(props) => props.theme.$cardText};
   border-radius: 6px;
   text-align: left;
   cursor: pointer;
+  color: ${(props) => props.theme.$cardText};
   div {
     margin-left: 20px;
     margin-right: 20px;

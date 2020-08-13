@@ -1,27 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
-import theme from '../theme/theme';
 import Fade from 'react-reveal/Fade';
 
 const StyledIntro = styled.div`
-  width: ${theme.$headerWidth};
-  margin-top: ${theme.$marginSection};
-  margin-bottom: ${theme.$marginSection};
+  width: ${(props) => props.theme.$headerWidth};
+  margin-top: ${(props) => props.theme.$marginSection};
+  margin-bottom: ${(props) => props.theme.$marginSection};
   margin-left: auto;
   margin-right: auto;
-  font-size: ${theme.$introFontSize};
+  font-size: ${(props) => props.theme.$introFontSize};
   font-weight: 700;
   div {
     margin-bottom: 6px;
   }
+  .name {
+    color: ${(props) => props.theme.$name};
+  }
   .pos {
-    color: ${theme.$themeColor};
+    color: ${(props) => props.theme.$themeColor};
   }
   .iconWrapper {
     a {
-      font-size: ${theme.$iconSize};
+      font-size: ${(props) => props.theme.$iconSize};
       margin-right: 10px;
-      color: ${theme.$jsYellow};
+      color: ${(props) => props.theme.$icon};
     }
   }
   @media (max-width: 1200px) {
@@ -39,7 +41,7 @@ const StyledIntro = styled.div`
 const Intro: React.FC = () => {
   return (
     <StyledIntro>
-      <div>I am Feng Xiong</div>
+      <div className='name'>I am Feng Xiong</div>
       <Fade left>
         <div className='pos'>Front-end developer</div>
         <div className='pos'>UI design enthusiastic</div>

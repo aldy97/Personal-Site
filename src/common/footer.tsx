@@ -1,18 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import theme from '../theme/theme';
 
 const Footer = () => {
   const StyledFooter = styled.div`
-    margin-top: ${theme.$marginSection};
-    height: ${theme.$headerHeight};
-    line-height: ${theme.$headerHeight};
+    margin-top: ${(props) => props.theme.$marginSection};
+    height: ${(props) => props.theme.$headerHeight};
+    line-height: ${(props) => props.theme.$headerHeight};
     text-align: center;
-    border-top: 1px solid ${theme.$themeColor};
-    background: #fff;
+    border-top: 1px solid ${(props) => props.theme.$themeColor};
+    background: ${(props) => props.theme.$background};
     a {
-      color: ${theme.$themeColor};
-      font-size: ${theme.$headerFontSize};
+      color: ${(props) => props.theme.$themeColor};
+      font-size: ${(props) => props.theme.$headerFontSize};
       margin-right: 20px;
       cursor: pointer;
     }

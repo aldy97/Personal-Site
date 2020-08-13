@@ -22,7 +22,7 @@ const getOptions: (list: string[][]) => string[] = (list: string[][]) => {
 const StyledA = styled.a`
   display: block;
   color: ${theme.$themeColor};
-  border: 2px solid #eee;
+  border: 2px solid ${(props) => props.theme.$filterBorder};
   border-radius: 6px;
   width: 200px;
   margin-left: auto;

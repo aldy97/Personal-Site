@@ -15,6 +15,7 @@ const StyledBlog = styled.div`
   p {
     font-size: ${theme.$headerFontSize};
     text-align: left;
+    color: ${(props) => props.theme.$cardText};
   }
   @media (max-width: 800px) {
     width: ${theme.$padWidth}px;

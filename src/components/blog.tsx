@@ -51,7 +51,7 @@ const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
   const StyledBlog = styled.div`
     min-height: ${minHeight}px;
     .title {
-      color: ${theme.$themeColor};
+      color: ${(props) => props.theme.$themeColor};
       font-size: ${theme.$titleSize};
       margin-bottom: 0;
       text-align: center;
@@ -67,6 +67,8 @@ const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
       margin-bottom: 0px;
     }
   `;
+
+  const StyledBlogCard = styled(StyledCard)``;
 
   return (
     <StyledBlog>
@@ -86,7 +88,7 @@ const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
         (blog, index: number) => {
           return (
             <Fade bottom>
-              <StyledCard
+              <StyledBlogCard
                 key={index}
                 cover={<img alt='' src={blog.pic} />}
                 hoverable={true}
@@ -103,7 +105,7 @@ const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
                     </StyledTag>
                   );
                 })}
-              </StyledCard>
+              </StyledBlogCard>
             </Fade>
           );
         }
