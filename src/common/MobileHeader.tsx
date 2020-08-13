@@ -41,8 +41,8 @@ const MobileHeader = ({ width }: HeaderProps) => {
           <span>
             <span
               style={{
-                fontSize: `${theme.$headerFontSize}`,
-                color: `${theme.$themeColor}`,
+                fontSize: `${(props: any) => props.theme.$headerFontSize}`,
+                color: `${(props: any) => props.theme.$themeColor}`,
               }}
             >
               Feng (Aldy) Xiong

@@ -25,7 +25,7 @@ const lightTheme: themeProps = {
   $name: 'black',
   $icon: '#f6b906',
   $cardBorder: '#eee',
-  $cardText: '#000',
+  $cardText: '',
   $footerBorderColor: 'rgb(3, 37, 108)',
   $tsBlue: 'rgb(0, 122, 204)',
   $jsYellow: '#f6b906',

@@ -16,7 +16,15 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { GlobalStyles } from './theme/GlobalStyles';
 
 function App() {
-  const [dark, setDark] = useState(false);
+  //To prevent shaking of the screen when page is directed
+  const initiate = () => {
+    const localTheme = window.localStorage.getItem('theme');
+    if (localTheme === null) {
+      return true;
+    } else return localTheme === 'dark' ? true : false;
+  };
+
+  const [dark, setDark] = useState(initiate());
 
   const setMode = (mode: string) => {
     window.localStorage.setItem('theme', mode);
@@ -24,7 +32,7 @@ function App() {
   };
 
   const toggleDark = (): any => {
-    dark ? setMode('dark') : setMode('light');
+    dark ? setMode('light') : setMode('dark');
   };
 
   useEffect(() => {
