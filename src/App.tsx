@@ -17,14 +17,14 @@ import { GlobalStyles } from './theme/GlobalStyles';
 
 function App() {
   //To prevent shaking of the screen when page is directed
-  const initiate = () => {
+  const initiateTheme = () => {
     const localTheme = window.localStorage.getItem('theme');
     if (localTheme === null) {
       return true;
     } else return localTheme === 'dark' ? true : false;
   };
 
-  const [dark, setDark] = useState(initiate());
+  const [dark, setDark] = useState(initiateTheme());
 
   const setMode = (mode: string) => {
     window.localStorage.setItem('theme', mode);

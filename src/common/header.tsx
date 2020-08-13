@@ -70,7 +70,11 @@ const Header = ({ toogleDark }: HeaderProps) => {
         <a href='https://drive.google.com/file/d/1JFUcNs16bV5_SvarKwQJ83JEw6JRjYC_/view'>
           Resume
         </a>
-        <Switch className='switch' onClick={toogleDark}></Switch>
+        <Switch
+          className='switch'
+          onClick={toogleDark}
+          defaultChecked={window.localStorage.getItem('theme') === 'dark'}
+        ></Switch>
       </span>
     </StyledHeader>
   ) : (

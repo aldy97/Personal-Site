@@ -39,51 +39,44 @@ const MobileHeader = ({ width, toogleDark }: HeaderProps) => {
 
   const StyledSubMenu = styled(SubMenu)``;
 
-  const StyledSwitch = styled(Switch)`
-    margin-left: 20px;
-  `;
-
   return (
-    <div>
-      <StyledMenu
-        mode='inline'
-        openKeys={state.openKeys}
-        onOpenChange={onOpenChange}
-        style={{ width: width }}
-      >
-        <StyledSubMenu
-          key='sub1'
-          title={
-            <span>
-              <span
-                style={{
-                  fontSize: `${theme.$headerFontSize}`,
-                  color: `${theme.$themeColor}`,
-                }}
-              >
-                <div className='name'>Feng (Aldy) Xiong</div>
-              </span>
+    <StyledMenu
+      mode='inline'
+      openKeys={state.openKeys}
+      onOpenChange={onOpenChange}
+      style={{ width: width }}
+    >
+      <StyledSubMenu
+        key='sub1'
+        title={
+          <span>
+            <span
+              style={{
+                fontSize: `${theme.$headerFontSize}`,
+                color: `${theme.$themeColor}`,
+              }}
+            >
+              <div className='name'>Feng (Aldy) Xiong</div>
             </span>
-          }
-        >
-          <Menu.Item key='0' className='0'>
-            <a href='/'>Home</a>
-          </Menu.Item>
-          <Menu.Item key='1'>
-            <a href='/projects'>Projects</a>
-          </Menu.Item>
-          <Menu.Item key='2'>
-            <a href='/blog'>Blog</a>
-          </Menu.Item>
-          <Menu.Item key='3'>
-            <a href='https://drive.google.com/file/d/1JFUcNs16bV5_SvarKwQJ83JEw6JRjYC_/view'>
-              Resume
-            </a>
-          </Menu.Item>
-        </StyledSubMenu>
-      </StyledMenu>
-      <StyledSwitch onClick={toogleDark}></StyledSwitch>
-    </div>
+          </span>
+        }
+      >
+        <Menu.Item key='0' className='0'>
+          <a href='/'>Home</a>
+        </Menu.Item>
+        <Menu.Item key='1'>
+          <a href='/projects'>Projects</a>
+        </Menu.Item>
+        <Menu.Item key='2'>
+          <a href='/blog'>Blog</a>
+        </Menu.Item>
+        <Menu.Item key='3'>
+          <a href='https://drive.google.com/file/d/1JFUcNs16bV5_SvarKwQJ83JEw6JRjYC_/view'>
+            Resume
+          </a>
+        </Menu.Item>
+      </StyledSubMenu>
+    </StyledMenu>
   );
 };
 
