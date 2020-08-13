@@ -72,10 +72,12 @@ const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
   };
   const StyledBlogCard = styled(Card)<CardProps>`
     width: ${(props) => `${props.width}px`};
+    border: 1px solid ${(props) => props.theme.$cardBorder};
     margin-left: auto;
     margin-right: auto;
     margin-top: ${(props) => props.theme.$marginSection};
     margin-bottom: ${(props) => props.theme.$marginSection};
+    cursor: pointer;
     @media (max-width: 1000px) {
       width: 600px;
     }
@@ -106,8 +108,7 @@ const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
                 key={index}
                 cover={<img alt='' src={blog.pic} />}
                 width={width}
-                bordered={false}
-                hoverable={true}
+                hoverable={false}
                 onClick={() => {
                   window.location.href = blog.href;
                 }}

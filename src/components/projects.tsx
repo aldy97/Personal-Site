@@ -7,6 +7,7 @@ import Fade from 'react-reveal/Fade';
 import useFilter from '../hooks/useFilter';
 import useInnerHeight from '../hooks/useInnerHeight';
 import projectList from './projectsList';
+import useInnerWidth from '../hooks/useInnerWidth';
 import 'antd/dist/antd.css';
 
 type CardProps = {
@@ -79,7 +80,11 @@ const Projects = ({ width, proNum, showButton, showFilter }: ProjectSProps) => {
 
   const height = useInnerHeight();
 
-  const minHeight = height - 2.3 * 60;
+  const innerWidth = useInnerWidth();
+
+  const ratio = innerWidth >= 1000 ? 2.4 : 2.9;
+
+  const minHeight = height - ratio * 60;
 
   const StyledProjects = styled.div`
     min-height: ${minHeight}px;
@@ -120,6 +125,9 @@ const Projects = ({ width, proNum, showButton, showFilter }: ProjectSProps) => {
           return (
             <Fade bottom>
               <StyledCard
+                headStyle={{
+                  color: 'rgb(0, 122, 204)',
+                }}
                 title={item.title}
                 extra={<a href={item.link}>More</a>}
                 width={width}
