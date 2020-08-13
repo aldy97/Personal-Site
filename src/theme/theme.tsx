@@ -21,6 +21,7 @@ const lightTheme: themeProps = {
 
   //colors
   $background: '#fff',
+  $headerName: 'rgb(0, 122, 204)',
   $filterBorder: 'rgb(0, 122, 204)',
   $name: '',
   $icon: '#f6b906',
@@ -57,6 +58,7 @@ export const darkTheme: themeProps = {
 
   //dark mode colors
   $background: '#09215a',
+  $headerName: '#6282c4',
   $name: '#fff',
   $filterBorder: '#6282c4',
   $cardTheme: '#1b3191',

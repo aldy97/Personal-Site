@@ -14,8 +14,12 @@ import { ThemeProvider } from 'styled-components';
 import lightTheme, { darkTheme } from './theme/theme';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { GlobalStyles } from './theme/GlobalStyles';
+import { Switch } from 'antd';
+import useInnerWidth from './hooks/useInnerWidth';
+import 'antd/dist/antd.css';
 
 function App() {
+  const width = useInnerWidth();
   //To prevent shaking of the screen when page is directed
   const initiateTheme = () => {
     const localTheme = window.localStorage.getItem('theme');
@@ -50,6 +54,15 @@ function App() {
       <ThemeProvider theme={dark ? darkTheme : lightTheme}>
         <GlobalStyles />
         <Header toogleDark={toggleDark} />
+        {width < 1000 ? (
+          <Switch
+            onClick={toggleDark}
+            defaultChecked={window.localStorage.getItem('theme') === 'dark'}
+            style={{ marginTop: 10, marginLeft: 25 }}
+          ></Switch>
+        ) : (
+          <div></div>
+        )}
         <BrowserRouter>
           <Route path='/' exact component={Home}></Route>
           <Route path='/blog' exact component={BlogPage}></Route>

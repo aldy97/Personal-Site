@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Menu, Switch } from 'antd';
+import { Menu } from 'antd';
 import 'antd/dist/antd.css';
-import theme from '../theme/theme';
 import styled from 'styled-components';
 
 type HeaderProps = {
@@ -33,7 +32,7 @@ const MobileHeader = ({ width, toogleDark }: HeaderProps) => {
   const StyledMenu = styled(Menu)`
     background: ${(props) => props.theme.$background};
     .name {
-      color: ${(props) => props.theme.$name};
+      color: ${(props) => props.theme.$headerName};
     }
   `;
 
@@ -50,12 +49,7 @@ const MobileHeader = ({ width, toogleDark }: HeaderProps) => {
         key='sub1'
         title={
           <span>
-            <span
-              style={{
-                fontSize: `${theme.$headerFontSize}`,
-                color: `${theme.$themeColor}`,
-              }}
-            >
+            <span>
               <div className='name'>Feng (Aldy) Xiong</div>
             </span>
           </span>
@@ -71,7 +65,7 @@ const MobileHeader = ({ width, toogleDark }: HeaderProps) => {
           <a href='/blog'>Blog</a>
         </Menu.Item>
         <Menu.Item key='3'>
-          <a href='https://drive.google.com/file/d/1JFUcNs16bV5_SvarKwQJ83JEw6JRjYC_/view'>
+          <a href='https://drive.google.com/file/d/10a8UpIcUg-PXGkviKI86gGLTcQ9gLMIS/view?usp=sharing'>
             Resume
           </a>
         </Menu.Item>
