@@ -7,6 +7,9 @@ import theme from '../theme/theme';
 const StyledCategory = styled.div`
   font-weight: bold;
   font-size: ${theme.$headerFontSize};
+  .c {
+    color: ${(props) => props.theme.$category};
+  }
 `;
 
 type CategoryProps = {
@@ -16,7 +19,7 @@ type CategoryProps = {
 const Category = ({ tagList }: CategoryProps) => {
   return (
     <StyledCategory>
-      <div>Categories:</div>
+      <div className='c'>Categories:</div>
       {tagList.map((tag, index) => {
         return (
           <Tag key={index} color={tag.color}>
