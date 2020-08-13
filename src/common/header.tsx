@@ -36,8 +36,6 @@ const StyledHeader = styled.div`
   }
 `;
 
-const StyledSwitch = styled(Switch)``;
-
 type HeaderProps = {
   toogleDark: any;
 };
@@ -72,11 +70,11 @@ const Header = ({ toogleDark }: HeaderProps) => {
         <a href='https://drive.google.com/file/d/1JFUcNs16bV5_SvarKwQJ83JEw6JRjYC_/view'>
           Resume
         </a>
-        <StyledSwitch className='switch' onClick={toogleDark}></StyledSwitch>
+        <Switch className='switch' onClick={toogleDark}></Switch>
       </span>
     </StyledHeader>
   ) : (
-    <MobileHeader width={width}></MobileHeader>
+    <MobileHeader width={width} toogleDark={toogleDark}></MobileHeader>
   );
 };
 

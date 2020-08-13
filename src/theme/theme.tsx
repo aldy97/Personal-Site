@@ -22,7 +22,7 @@ const lightTheme: themeProps = {
   //colors
   $background: '#fff',
   $filterBorder: 'rgb(0, 122, 204)',
-  $name: 'black',
+  $name: '',
   $icon: '#f6b906',
   $cardBorder: '#eee',
   $cardText: '',
