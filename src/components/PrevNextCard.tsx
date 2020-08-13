@@ -8,7 +8,7 @@ const BlogSwitcher = styled.div`
   margin-top: ${theme.$marginSection};
   padding-top: 15px;
   padding-bottom: 15px;
-  border: 1px solid ${(props) => props.theme.$dividerColor};
+  border: 2px solid ${(props) => props.theme.$dividerColor};
   border-radius: 6px;
   text-align: left;
   cursor: pointer;
@@ -19,7 +19,7 @@ const BlogSwitcher = styled.div`
     font-size: 18px;
   }
   &: hover {
-    border: 1px solid ${theme.$themeColor};
+    border: 2px solid ${theme.$themeColor};
   }
   @media (max-width: 800px) {
     width: ${theme.$padWidth}px;

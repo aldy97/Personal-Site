@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import useFilter from '../hooks/useFilter';
 import { blog } from './blogList';
 import Filter from './Filter';
-import { StyledButton, StyledCard } from './projects';
+import { StyledButton } from './projects';
 import { Card, Tag } from 'antd';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
@@ -46,7 +46,7 @@ const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
 
   const height = useInnerHeight();
 
-  const minHeight = height - 2.3 * 60;
+  const minHeight = height - 2 * 60;
 
   const StyledBlog = styled.div`
     min-height: ${minHeight}px;
@@ -67,8 +67,22 @@ const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
       margin-bottom: 0px;
     }
   `;
-
-  const StyledBlogCard = styled(StyledCard)``;
+  type CardProps = {
+    width: number;
+  };
+  const StyledBlogCard = styled(Card)<CardProps>`
+    width: ${(props) => `${props.width}px`};
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: ${(props) => props.theme.$marginSection};
+    margin-bottom: ${(props) => props.theme.$marginSection};
+    @media (max-width: 1000px) {
+      width: 600px;
+    }
+    @media (max-width: 600px) {
+      width: ${(props) => props.theme.$mobileWidth}px;
+    }
+  `;
 
   return (
     <StyledBlog>
@@ -91,8 +105,9 @@ const Blog = ({ width, blogNum, showButton, showFilter }: BlogProps) => {
               <StyledBlogCard
                 key={index}
                 cover={<img alt='' src={blog.pic} />}
-                hoverable={true}
                 width={width}
+                bordered={false}
+                hoverable={true}
                 onClick={() => {
                   window.location.href = blog.href;
                 }}

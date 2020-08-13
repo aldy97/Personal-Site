@@ -58,7 +58,7 @@ function App() {
           <Switch
             onClick={toggleDark}
             defaultChecked={window.localStorage.getItem('theme') === 'dark'}
-            style={{ marginTop: 10, marginLeft: 25 }}
+            style={{ marginTop: 10, marginLeft: 20 }}
           ></Switch>
         ) : (
           <div></div>
