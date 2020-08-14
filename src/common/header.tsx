@@ -68,7 +68,7 @@ const Header = ({ toogleDark, dark }: HeaderProps) => {
         >
           Projects
         </span>
-        <a href='https://drive.google.com/file/d/10a8UpIcUg-PXGkviKI86gGLTcQ9gLMIS/view?usp=sharing'>
+        <a href='https://drive.google.com/file/d/1HqSl4qL9VJPdmTMKKvgULu7YWWhHonCh/view?usp=sharing'>
           Resume
         </a>
         <Switch
