@@ -30,17 +30,17 @@ function MobileHeader({ dark }: MobileHeaderProps) {
     <div>
       <StyledMenu
         style={{
+          color: theme === 'dark' ? '#6282c4' : 'rgb(0, 122, 204)',
           width: width,
           background: theme === 'dark' ? '#09215a' : '#fff',
         }}
         theme={theme as any}
         onClick={handleClick}
-        selectedKeys={[current]}
         mode='inline'
       >
         <SubMenu key='sub1' title='Feng (Aldy) Xiong'>
           <Menu.Item key='1'>
-            <a href='./'>Home</a>
+            <a href='/'>Home</a>
           </Menu.Item>
           <Menu.Item key='2'>
             <a href='/projects'>Project</a>

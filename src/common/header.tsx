@@ -75,8 +75,8 @@ const Header = ({ toogleDark, dark }: HeaderProps) => {
           className='switch'
           onClick={toogleDark}
           defaultChecked={window.localStorage.getItem('theme') === 'dark'}
-          checkedChildren='Dark'
-          unCheckedChildren='Light'
+          checkedChildren='🌛'
+          unCheckedChildren='🌞'
         ></Switch>
       </span>
     </StyledHeader>

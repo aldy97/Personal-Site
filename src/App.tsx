@@ -58,8 +58,8 @@ function App() {
             onClick={toggleDark}
             defaultChecked={window.localStorage.getItem('theme') === 'dark'}
             style={{ marginTop: 10, marginLeft: 20 }}
-            checkedChildren='Dark'
-            unCheckedChildren='Light'
+            checkedChildren='🌛'
+            unCheckedChildren='🌞'
           ></Switch>
         ) : (
           <div></div>
