@@ -38,8 +38,9 @@ const StyledHeader = styled.div`
 
 type HeaderProps = {
   toogleDark: any;
+  dark: boolean;
 };
-const Header = ({ toogleDark }: HeaderProps) => {
+const Header = ({ toogleDark, dark }: HeaderProps) => {
   const width = useInnerWidth();
 
   return width > 1000 ? (
@@ -78,7 +79,7 @@ const Header = ({ toogleDark }: HeaderProps) => {
       </span>
     </StyledHeader>
   ) : (
-    <MobileHeader width={width} toogleDark={toogleDark}></MobileHeader>
+    <MobileHeader dark={dark}></MobileHeader>
   );
 };
 

@@ -53,12 +53,14 @@ function App() {
     <div>
       <ThemeProvider theme={dark ? darkTheme : lightTheme}>
         <GlobalStyles />
-        <Header toogleDark={toggleDark} />
+        <Header toogleDark={toggleDark} dark={dark} />
         {width < 1000 ? (
           <Switch
             onClick={toggleDark}
             defaultChecked={window.localStorage.getItem('theme') === 'dark'}
             style={{ marginTop: 10, marginLeft: 20 }}
+            checkedChildren='Dark'
+            unCheckedChildren='Light'
           ></Switch>
         ) : (
           <div></div>
