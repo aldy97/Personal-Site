@@ -1,8 +1,3 @@
-// import React, { useState } from 'react';
-// import { Menu } from 'antd';
-// import 'antd/dist/antd.css';
-// import styled from 'styled-components';
-
 // type HeaderProps = {
 //   width: number;
 //   toogleDark: any;
@@ -74,7 +69,6 @@
 //   );
 // };
 
-// export default MobileHeader;
 import React, { useState, useEffect } from 'react';
 import { Menu } from 'antd';
 import styled from 'styled-components';
@@ -90,25 +84,14 @@ type MobileHeaderProps = {
 };
 function MobileHeader({ dark }: MobileHeaderProps) {
   const width = useInnerWidth();
-  // state = {
-  //   theme: 'dark',
-  //   current: '1',
-  // };
-
   const [theme, setTheme] = useState(dark ? 'dark' : 'light');
   const [current, setCurrent] = useState('1');
 
   useEffect(() => {
-    console.log(theme);
+    setTheme(dark ? 'dark' : 'light');
   });
-  // changeTheme = (value: any) => {
-  //   this.setState({
-  //     theme: value ? 'dark' : 'light',
-  //   });
-  // };
 
   const handleClick = (e: any) => {
-    console.log('click ', e);
     setCurrent(e.key);
   };
 
@@ -121,7 +104,7 @@ function MobileHeader({ dark }: MobileHeaderProps) {
         selectedKeys={[current]}
         mode='inline'
       >
-        <SubMenu key='sub1' title='Feng Xiong'>
+        <SubMenu key='sub1' title='Feng (Aldy) Xiong'>
           <Menu.Item key='1'>
             <a href='./'>Home</a>
           </Menu.Item>

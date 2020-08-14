@@ -41,13 +41,12 @@ function App() {
 
   useEffect(() => {
     const localTheme = window.localStorage.getItem('theme');
-    console.log(localTheme);
     if (localTheme === 'dark') {
       setDark(true);
     } else {
       setDark(false);
     }
-  }, []);
+  }, [dark]);
 
   return (
     <div>
