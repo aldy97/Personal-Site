@@ -45,10 +45,7 @@ const blogList: blog[] = [
     desc:
       'Making layout be adaptive to all screen size is important and critical',
     pic: require('../static/LayoutSolution.jpg'),
-    tags: [
-      { color: theme.$reactBlue as string, name: 'CSS' },
-      { color: theme.$tsBlue as string, name: 'UI/UX' },
-    ],
+    tags: [{ color: theme.$tsBlue as string, name: 'UI/UX' }],
     href: '/blog/3',
   },
   {
@@ -81,8 +78,6 @@ const blogList: blog[] = [
     desc: 'Dark mode now has become a must for web apps',
     pic: require('../static/dark-mode.jpeg'),
     tags: [
-      { color: theme.$reactBlue as string, name: 'React' },
-      { color: theme.$tsBlue as string, name: 'TypeScript' },
       { color: theme.$tsBlue as string, name: 'UI/UX' },
       { color: theme.$reactBlue as string, name: 'CSS' },
     ],

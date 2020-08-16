@@ -64,7 +64,8 @@ const content = [
   <SubTitle>My Solution to this issue</SubTitle>,
   <p>You probably have got to know what my solution is: custom hook.</p>,
   <div style={{ textAlign: 'left' }}>
-    <Highlight className='typescript'>{`
+    <Highlight className='typescript'>
+      {`
   import { useState, useEffect } from 'react';
 
   //Listener for current innerHeight of browser.
@@ -82,7 +83,8 @@ const content = [
   }
   
   export default useInnerHeight;
-  `}</Highlight>
+  `}
+    </Highlight>
   </div>,
   <p>
     If you have little knowledge in{' '}
