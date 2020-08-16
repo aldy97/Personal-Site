@@ -75,6 +75,19 @@ const blogList: blog[] = [
     ],
     href: '/blog/5',
   },
+  {
+    title: 'How I Implemented Dark Mode',
+    time: dayjs('2020-08-15'),
+    desc: 'Dark mode now has become a must for web apps',
+    pic: require('../static/dark-mode.jpeg'),
+    tags: [
+      { color: theme.$reactBlue as string, name: 'React' },
+      { color: theme.$tsBlue as string, name: 'TypeScript' },
+      { color: theme.$tsBlue as string, name: 'UI/UX' },
+      { color: theme.$reactBlue as string, name: 'CSS' },
+    ],
+    href: '/blog/6',
+  },
 ];
 
 export default blogList;

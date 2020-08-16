@@ -10,6 +10,7 @@ import ResLay from './pages/blog/ResLay';
 import DataRender from './pages/blog/DataRender';
 import CustomHook from './pages/blog/CustomHook';
 import HackInstead from './pages/blog/HackInstead';
+import DarkMode from './pages/blog/DarkMode';
 import { ThemeProvider } from 'styled-components';
 import lightTheme, { darkTheme } from './theme/theme';
 import { BrowserRouter, Route } from 'react-router-dom';
@@ -74,6 +75,7 @@ function App() {
           <Route path='/blog/3' exact component={ResLay}></Route>
           <Route path='/blog/4' exact component={CustomHook}></Route>
           <Route path='/blog/5' exact component={HackInstead}></Route>
+          <Route path='/blog/6' exact component={DarkMode}></Route>
         </BrowserRouter>
         <Footer />
       </ThemeProvider>
