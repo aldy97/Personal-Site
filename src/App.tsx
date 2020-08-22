@@ -22,7 +22,7 @@ import 'antd/dist/antd.css';
 function App() {
   const width = useInnerWidth();
   //To prevent shaking of the screen when page is directed
-  const initiateTheme = () => {
+  const initiateTheme: () => boolean = () => {
     const localTheme = window.localStorage.getItem('theme');
     if (localTheme === null) {
       return true;
