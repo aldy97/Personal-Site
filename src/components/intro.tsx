@@ -43,8 +43,8 @@ const Intro: React.FC = () => {
     <StyledIntro>
       <div className='name'>I am Feng Xiong</div>
       <Fade left>
-        <div className='pos'>Front-end developer</div>
-        <div className='pos'>UI design enthusiastic</div>
+        <div className='pos'>Web/iOS developer</div>
+        <div className='pos'>Passionate programmer</div>
 
         <div className='iconWrapper'>
           <a

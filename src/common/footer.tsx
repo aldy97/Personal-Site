@@ -6,13 +6,14 @@ const Footer = () => {
     margin-top: ${(props) => props.theme.$marginSection};
     height: ${(props) => props.theme.$headerHeight};
     line-height: ${(props) => props.theme.$headerHeight};
-    text-align: center;
     border-top: 1px solid ${(props) => props.theme.$themeColor};
     background: ${(props) => props.theme.$background};
+    text-align: center;
     a {
+      flex: 1;
+      margin-right: 20px;
       color: ${(props) => props.theme.$themeColor};
       font-size: ${(props) => props.theme.$headerFontSize};
-      margin-right: 20px;
       cursor: pointer;
     }
     @media (max-width: 500px) {

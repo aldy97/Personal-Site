@@ -49,7 +49,7 @@ function MobileHeader({ dark }: MobileHeaderProps) {
             <a href='/blog'>Blog</a>
           </Menu.Item>
           <Menu.Item key='4'>
-            <a href='https://drive.google.com/file/d/1HqSl4qL9VJPdmTMKKvgULu7YWWhHonCh/view?usp=sharing'>
+            <a href='https://drive.google.com/file/d/121szG1iCFtlS8Aqz6RitVPC829kzw0TE/view?usp=sharing'>
               Resume
             </a>
           </Menu.Item>

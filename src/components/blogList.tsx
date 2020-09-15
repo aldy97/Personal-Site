@@ -75,7 +75,7 @@ const blogList: blog[] = [
   {
     title: 'How I Implemented Dark Mode',
     time: dayjs('2020-08-15'),
-    desc: 'Dark mode now has become a must for web apps',
+    desc: 'Dark mode now has become a must for web and apps',
     pic: require('../static/dark-mode.jpeg'),
     tags: [
       { color: theme.$tsBlue as string, name: 'UI/UX' },

@@ -68,7 +68,7 @@ const projectsList: project[] = [
     title: 'TypeScript-Algorithm🤖️',
     link: 'https://github.com/aldy97/TypeScript-Algorithm',
     intro: 'Solving algorithm questions on Leetcode with TypeScript ',
-    status: "Doing questions labeled easy and medium'",
+    status: "Doing questions labeled 'easy' and 'medium'",
     percent: 30,
     tags: [{ color: theme.$tsBlue as string, name: 'Algorithm' }],
   },
