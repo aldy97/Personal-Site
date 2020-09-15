@@ -10,7 +10,6 @@ const Footer = () => {
     background: ${(props) => props.theme.$background};
     text-align: center;
     a {
-      flex: 1;
       margin-right: 20px;
       color: ${(props) => props.theme.$themeColor};
       font-size: ${(props) => props.theme.$headerFontSize};

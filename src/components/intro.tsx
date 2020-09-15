@@ -31,7 +31,7 @@ const StyledIntro = styled.div`
   }
   @media (max-width: 1000px) {
     width: 350px;
-    font-size: 2rem;
+    font-size: 30px;
     div {
       text-align: center;
     }
@@ -44,7 +44,7 @@ const Intro: React.FC = () => {
       <div className='name'>I am Feng Xiong</div>
       <Fade left>
         <div className='pos'>Web/iOS developer</div>
-        <div className='pos'>Passionate programmer</div>
+        <div className='pos'>Passionate learner</div>
 
         <div className='iconWrapper'>
           <a
