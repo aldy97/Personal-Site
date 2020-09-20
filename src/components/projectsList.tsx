@@ -19,7 +19,7 @@ const projectsList: project[] = [
     title: 'ShangHai MDYL Website🏠',
     link: 'https://github.com/aldy97/MeiDi',
     intro: `Simulation of a website of a company located in Shanghai`,
-    status: 'Missing materials to finish projects section...',
+    status: 'Missing materials to finish projects section',
     percent: 70,
     tags: [
       { color: theme.$reactBlue as string, name: 'React' },
@@ -57,7 +57,7 @@ const projectsList: project[] = [
     title: 'My Personal Website👤',
     link: 'https://github.com/aldy97/Personal-Site',
     intro: 'My personal website written in TypeScipt',
-    status: 'Consistently updating my blog',
+    status: 'Consistently updating my blog and projects',
     percent: 100,
     tags: [
       { color: theme.$reactBlue as string, name: 'React' },
@@ -70,18 +70,33 @@ const projectsList: project[] = [
     intro: 'Solving algorithm questions on Leetcode with TypeScript ',
     status: "Doing questions labeled 'easy' and 'medium'",
     percent: 30,
-    tags: [{ color: theme.$tsBlue as string, name: 'Algorithm' }],
+    tags: [
+      { color: theme.$tsBlue as string, name: 'Algorithm' },
+      { color: theme.$tsBlue as string, name: 'TypeScript' },
+    ],
   },
   {
     title: 'Covid-19 Canada🦠',
     link: 'https://github.com/aldy97/Covid-19-Canada',
     intro:
-      'Visualization of Covid-19 situation in Canada, data from John Hopkins API',
+      'Visualization of Covid-19 situation in Canada, data acquired from John Hopkins API',
     status: 'Allowing more API from different authorities',
     percent: 60,
     tags: [
       { color: theme.$tsBlue as string, name: 'TypeScript' },
       { color: theme.$reactBlue as string, name: 'React' },
+    ],
+  },
+  {
+    title: 'Pills Taker💊',
+    link: 'https://github.com/aldy97/MedHacks',
+    intro:
+      'An iOS app that reminds patients to take medecines based on their prescription',
+    status: 'Allowing prescription editting functionality',
+    percent: 40,
+    tags: [
+      { color: theme.$tsBlue as string, name: 'TypeScript' },
+      { color: theme.$reactBlue as string, name: 'React Native' },
     ],
   },
 ];
