@@ -37,10 +37,10 @@ const StyledHeader = styled.div`
 `;
 
 type HeaderProps = {
-  toogleDark: any;
+  toggleDark: any;
   dark: boolean;
 };
-const Header = ({ toogleDark, dark }: HeaderProps) => {
+const Header = ({ toggleDark, dark }: HeaderProps) => {
   const width = useInnerWidth();
 
   return width > 1000 ? (
@@ -73,7 +73,7 @@ const Header = ({ toogleDark, dark }: HeaderProps) => {
         </a>
         <Switch
           className='switch'
-          onClick={toogleDark}
+          onClick={toggleDark}
           defaultChecked={window.localStorage.getItem('theme') === 'dark'}
           checkedChildren='🌛'
           unCheckedChildren='🌞'

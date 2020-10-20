@@ -8,9 +8,11 @@ const Footer = () => {
     line-height: ${(props) => props.theme.$headerHeight};
     border-top: 1px solid ${(props) => props.theme.$themeColor};
     background: ${(props) => props.theme.$background};
-    text-align: center;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     a {
-      margin-right: 20px;
       color: ${(props) => props.theme.$themeColor};
       font-size: ${(props) => props.theme.$headerFontSize};
       cursor: pointer;
@@ -29,7 +31,12 @@ const Footer = () => {
   return (
     <StyledFooter>
       <a href='https://github.com/aldy97'>Github</a>
-      <a href='https://www.linkedin.com/in/feng-xiong-ba3a76166/'>Linkedin</a>
+      <a
+        style={{ marginLeft: 20, marginRight: 20 }}
+        href='https://www.linkedin.com/in/feng-xiong-ba3a76166/'
+      >
+        Linkedin
+      </a>
       <a href='mailto:fengxiong34@gmail.com'>Email</a>
     </StyledFooter>
   );

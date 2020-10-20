@@ -53,7 +53,7 @@ function App() {
     <div>
       <ThemeProvider theme={dark ? darkTheme : lightTheme}>
         <GlobalStyles />
-        <Header toogleDark={toggleDark} dark={dark} />
+        <Header toggleDark={toggleDark} dark={dark} />
         {width < 1000 ? (
           <Switch
             onClick={toggleDark}
