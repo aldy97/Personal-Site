@@ -24,3 +24,7 @@ I do my blog that records my development and learning stories here, mainly on fr
 
 - npm run start
 
+### Test components:
+- npm run test
+
+
