@@ -1,6 +1,6 @@
-
 ## My Personal Website👤
-I do my blog that records my development and learning stories here, mainly on front-end stuff.
+[![HitCount](http://hits.dwyl.com/aldy97/Personal-Site.svg)](http://hits.dwyl.com/aldy97/Personal-Site)
+<br>I do my blog that records my development and learning stories here, mainly on front-end stuff.
 
 ### Features
 
