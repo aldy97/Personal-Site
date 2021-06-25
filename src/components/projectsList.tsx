@@ -93,12 +93,38 @@ const projectsList: project[] = [
     intro:
       'An iOS app that reminds patients to take medecines based on their prescription',
     status: 'Allowing prescription editting functionality',
-    percent: 40,
+    percent: 70,
     tags: [
       { color: theme.$tsBlue as string, name: 'TypeScript' },
       { color: theme.$reactBlue as string, name: 'React Native' },
     ],
   },
+  {
+    title: "Budget Planner💰",
+    link: "http://budget-planner-client.netlify.app",
+    intro: "A web app that helps improve finanical status", 
+    status: "MVP finished, working on adding more features",
+    percent: 99,
+    tags:[
+      { color: theme.$tsBlue as string, name: "TypeScript" },
+      { color: theme.$reactBlue as string, name: 'React' },
+      { color: theme.$nodeGreen as string, name: "Node"},
+      { color: theme.$expressGreen as string, name: 'Express' },
+    ]
+  },
+  {
+    title: "Course Scheduler📖",
+    link: "http://course-load.netlify.app",
+    intro: "Course scheduling at UBC made easier!", 
+    status: "Working on automated crawller",
+    percent: 99,
+    tags:[
+      { color: theme.$tsBlue as string, name: "TypeScript" },
+      { color: theme.$reactBlue as string, name: 'React' },
+      { color: theme.$nodeGreen as string, name: "Node"},
+      { color: theme.$expressGreen as string, name: 'Express' },
+    ]
+  }
 ];
 
 export default projectsList;
